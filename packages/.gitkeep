@@ -1,0 +1,9 @@
+# Vaste Custom Packages
+
+This directory contains Vaste custom packages:
+
+- **vaste-core**: Core RLS traits and Auto-API generator
+- **vaste-storage**: S3-compatible storage service
+- **vaste-realtime**: Laravel Broadcasting integration
+
+These will be developed in Phase 3+

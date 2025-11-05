@@ -1,0 +1,555 @@
+/* BASE CMS - Admin Custom Styles */
+/* Extracted from styles.blade.php for better maintainability */
+
+/* Remove pseudo-elements creating the square in collapsible sidebar links */
+.sidenav .nav-link[data-bs-toggle="collapse"]::before,
+.sidenav .nav-link[data-bs-toggle="collapse"]::after {
+  display: none !important;
+}
+
+/* Rotate chevron when dropdown is expanded */
+.sidenav .nav-link[data-bs-toggle="collapse"] i {
+  transition: transform 0.2s ease;
+}
+
+.sidenav .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] i {
+  transform: rotate(90deg);
+}
+
+/* Remove dropdown caret from user profile only */
+#dropdownUser::after,
+#dropdownUser::before {
+  content: none !important;
+  display: none !important;
+  border: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Remove floating square arrow on the profile dropdown menu */
+#dropdownUser + .dropdown-menu::before,
+#dropdownUser + .dropdown-menu::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Remove floating square arrow on the notifications dropdown menu */
+#dropdownNotifications + .dropdown-menu::before,
+#dropdownNotifications + .dropdown-menu::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Align notifications dropdown with profile dropdown */
+#dropdownNotifications + .dropdown-menu[data-bs-popper] {
+  top: calc(100% - 6px) !important;
+  margin-top: 0 !important;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3A416F 0%, #2A3050 100%);
+  border-radius: 10px;
+  border: 2px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2A3050 0%, #1A2030 100%);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3A416F #f5f5f5;
+}
+
+/* Page titles and icons - brand blue color */
+h5.font-weight-bolder {
+  color: #3A416F !important;
+}
+
+h5.font-weight-bolder i.material-symbols-rounded {
+  color: #3A416F !important;
+}
+
+/* Form fieldsets - global styling for all create forms */
+.form-fieldset {
+  border: 1px solid #d2d6da;
+  border-radius: 8px;
+  padding: 1rem 0.75rem 0.75rem 0.75rem;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.form-fieldset legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #344767;
+  width: auto;
+  padding: 0 0.5rem;
+  margin-bottom: 0;
+  position: absolute;
+  top: -0.6rem;
+  left: 1rem;
+  background: white;
+}
+
+/* Remove bottom margin from last child in fieldsets */
+.form-fieldset > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Static label styling - Material Design floating label with neutral gray colors */
+.input-group-outline.has-static-label .form-label {
+  width: 100%;
+  height: 100%;
+  font-size: 0.6875rem !important;
+  color: #344767 !important;
+  display: flex;
+  line-height: 1.25 !important;
+}
+
+.input-group-outline.has-static-label .form-label:before,
+.input-group-outline.has-static-label .form-label:after {
+  opacity: 1;
+  background-color: #fff;
+  border-top: solid 1px #d2d6da !important;
+}
+
+.input-group-outline.has-static-label .form-control {
+  border-color: #d2d6da !important;
+  border-top-color: transparent !important;
+}
+
+/* Native date input with static label - push placeholder below label */
+.input-group-outline.has-static-label .native-date-input {
+  padding-top: 1.5rem;
+}
+
+/* Textarea with floating label - push content below label when filled */
+.input-group-outline.is-filled textarea.form-control {
+  padding-top: 1.5rem;
+}
+
+/* Prevent border on focus for date inputs to avoid "focused" look */
+.input-group-outline:has(.native-date-input:focus):not(.is-invalid) {
+  border-color: #d2d6da !important;
+}
+
+.input-group-outline:has(.native-date-input:focus):not(.is-invalid) .form-label {
+  color: #344767 !important;
+}
+
+/* Global Bootstrap 5 select styling for all dropdowns */
+select.form-control {
+  border: 1px solid #d2d6da;
+  border-radius: 0.375rem;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  color: #6c757d;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23344767' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  appearance: none;
+}
+
+select.form-control:focus {
+  border-color: #3A416F;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(58, 65, 111, 0.25);
+}
+
+/* Placeholder option color */
+select.form-control option[value=""] {
+  color: #6c757d;
+}
+
+/* Selected option color */
+select.form-control option:not([value=""]) {
+  color: #344767;
+}
+
+/* Global Datatable Checkbox Styling */
+/* Compact checkbox sizing for tables */
+.table .form-check-input {
+  width: 1rem;
+  height: 1rem;
+  margin: 0 auto;
+  cursor: pointer;
+  display: block;
+}
+
+.table .form-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure header and body cells have consistent alignment */
+.table thead th:first-child,
+.table tbody td:first-child {
+  vertical-align: middle;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Disable FontAwesome :after pseudo-element that shows the square icon */
+.table .form-check-input[type=checkbox]:after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Fix checked checkbox styling - match btn-primary gradient with checkmark */
+.table .form-check-input:checked[type=checkbox] {
+  background-color: #3A416F !important;
+  border-color: #3A416F !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e"), linear-gradient(195deg, #3A416F 0%, #2d3357 100%) !important;
+}
+
+.table .form-check-input:checked {
+  background-color: #3A416F !important;
+  border-color: #3A416F !important;
+}
+
+/* Indeterminate state - show dash when some but not all selected */
+.table .form-check-input:indeterminate[type=checkbox] {
+  background-color: #3A416F !important;
+  border-color: #3A416F !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e"), linear-gradient(195deg, #3A416F 0%, #2d3357 100%) !important;
+}
+
+/* Match page checkboxes to datatable checkbox size */
+.page-checkbox.form-check-input {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+/* Global Table Badge Styling - Make badges smaller and more compact */
+.table .badge,
+.table .badge-sm {
+  font-size: 0.6rem !important;
+  padding: 0.2rem 0.45rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
+  min-height: auto !important;
+  vertical-align: middle !important;
+}
+
+/* Ensure gradient badges maintain proper sizing */
+.table .badge.bg-gradient-success,
+.table .badge.bg-gradient-warning,
+.table .badge.bg-gradient-danger,
+.table .badge.bg-gradient-info,
+.table .badge.bg-gradient-secondary,
+.table .badge.bg-gradient-primary {
+  font-size: 0.6rem !important;
+  padding: 0.2rem 0.45rem !important;
+}
+
+/* Set fixed minimum height for all rows - consistent for single and double line content */
+.table tbody tr {
+  min-height: 3rem !important;
+}
+
+.table tbody td {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  vertical-align: middle !important;
+  height: 3rem !important;
+  min-height: 3rem !important;
+}
+
+/* Reduce padding in the d-flex containers inside body cells only */
+.table tbody td .d-flex.px-2.py-1 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  align-items: center !important;
+  min-height: 100% !important;
+}
+
+/* Perfect vertical centering for flex columns */
+.table tbody td .d-flex.flex-column.justify-content-center {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Make text elements perfectly aligned */
+.table tbody td h6,
+.table tbody td p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.4 !important;
+  display: block !important;
+}
+
+/* Ensure all simple text content aligns */
+.table tbody td .text-xs,
+.table tbody td .text-sm,
+.table tbody td span {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  line-height: 1.4 !important;
+}
+
+/* Force last row to have IDENTICAL padding as all other rows */
+.table tbody tr:last-child td {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  vertical-align: middle !important;
+  border-bottom: none !important;
+}
+
+.table tbody tr:last-child td .d-flex.px-2.py-1 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.table tbody tr:last-child td h6,
+.table tbody tr:last-child td p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* When showing only selected rows (filtered view), remove bottom border only from last visible row */
+.table.filtered-view tbody tr.last-visible-row td {
+  border-bottom: none !important;
+}
+
+
+/* Bulk Actions Header Content Styling */
+.bulk-actions-header-content {
+  background: transparent;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.selection-counter-link {
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 0.375rem !important;
+  transition: background-color 0.2s ease !important;
+  color: #344767 !important;
+  font-size: 0.75rem !important;
+  border: 1px solid transparent !important;
+}
+
+.selection-counter-link:hover {
+  background-color: #f1f1f1 !important;
+  color: #344767 !important;
+}
+
+.btn-action-toolbar {
+  background-color: white !important;
+  color: #344767 !important;
+  border: 1px solid #d2d6da !important;
+  font-weight: 500 !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 0.375rem !important;
+  font-size: 0.75rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-action-toolbar:hover {
+  background-color: #f8f9fa !important;
+  border-color: #a8adb3 !important;
+  color: #344767 !important;
+}
+
+.toggle-selection {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  width: 1.5rem !important;
+  height: 0.7rem !important;
+  border: 1px solid #d2d6da !important;
+  background-color: #f0f0f0 !important;
+  border-radius: 0.35rem !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+/* Add the sliding circle thumb */
+.toggle-selection::before {
+  content: '' !important;
+  position: absolute !important;
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+  top: 0.0375rem !important;
+  left: 0.125rem !important;
+  transition: transform 0.3s ease !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+
+/* When checked, move thumb to right and change colors */
+.toggle-selection:checked {
+  background-color: #3A416F !important;
+  border-color: #3A416F !important;
+}
+
+/* Force our blue color with higher specificity to override any Bootstrap defaults */
+.bulk-actions-toolbar .toggle-selection:checked,
+input.toggle-selection:checked,
+input[type="checkbox"].toggle-selection:checked {
+  background-color: #3A416F !important;
+  border-color: #3A416F !important;
+  background-image: none !important; /* Remove any gradient that might be making it dark */
+}
+
+.toggle-selection:checked::before {
+  transform: translateX(0.75rem) !important;
+}
+
+/* Remove default checkbox checkmark if it appears */
+.toggle-selection:after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Dropdown item hover styles - override Material Dashboard defaults */
+.dropdown-menu .dropdown-item {
+  transition: background-color 0.2s ease !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: #f8f9fa !important;
+  color: #344767 !important;
+}
+
+/* Ensure bulk actions dropdown items have proper styling */
+#selectionDropdown + .dropdown-menu .dropdown-item:hover,
+#selectionDropdown + .dropdown-menu .dropdown-item:focus,
+.table thead .dropdown-menu .dropdown-item:hover,
+.table thead .dropdown-menu .dropdown-item:focus {
+  background-color: #f8f9fa !important;
+  color: #344767 !important;
+}
+
+/* Clickable table rows with hover effect */
+.table tbody tr.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr.clickable-row:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Ensure script tags are never visible - fixes vertical scrollbar issue with 1 filtered row */
+script {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  width: 0 !important;
+}
+
+/* Fix sidebar height to prevent vertical scrollbar with filtered tables */
+.sidenav {
+  max-height: 100vh !important;
+  overflow-y: auto !important;
+}
+
+/* TARGETED FIX: Hide overflow on table-responsive when only 1 row is visible */
+.table-responsive.single-row-mode {
+  overflow: hidden !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix dropdown menu clipping in table */
+.table-responsive {
+  overflow: visible !important;
+}
+
+/* Ensure card body allows dropdown overflow */
+.card-body {
+  overflow: visible !important;
+}
+
+/* Ensure dropdown menus appear above everything */
+.dropdown-menu {
+  z-index: 1050 !important;
+}
+
+/* Fix is-filled fields appearing focused */
+.input-group.input-group-outline.is-filled:not(.is-focused) .form-label+.form-control {
+  border-color: #d2d6da !important;
+  border-top-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep disabled inputs consistent with solid borders */
+.input-group.input-group-outline .form-control[disabled] {
+  border-style: solid !important;
+  border-color: #d2d6da !important;
+}
+
+/* Readonly input styling */
+.form-control-readonly {
+  background-color: transparent !important;
+  color: #5c617a;
+  border: 1px dashed #d2d6da !important;
+  box-shadow: none !important;
+}
+
+.input-group.input-group-outline.is-filled:not(.is-focused) .form-label {
+  color: #7b809a !important;
+}
+
+.input-group.input-group-outline.is-filled:not(.is-focused) .form-label:before,
+.input-group.input-group-outline.is-filled:not(.is-focused) .form-label:after {
+  border-top-color: #d2d6da !important;
+  box-shadow: none !important;
+}
+
+/* Ensure only actually focused fields get the dark blue border */
+.input-group.input-group-outline.is-focused .form-label+.form-control {
+  border-color: #3A416F !important;
+  border-top-color: transparent !important;
+  box-shadow: inset 1px 0 #3A416F, inset -1px 0 #3A416F, inset 0 -1px #3A416F !important;
+}
+
+.input-group.input-group-outline.is-focused .form-label {
+  color: #3A416F !important;
+}
+
+.input-group.input-group-outline.is-focused .form-label:before,
+.input-group.input-group-outline.is-focused .form-label:after {
+  border-top-color: #3A416F !important;
+  box-shadow: inset 0 1px #3A416F !important;
+}

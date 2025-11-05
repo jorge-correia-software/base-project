@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invoice</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Material-ish custom styles -->
+<style>
+  :root {
+    --md-surface: #fff;
+    --md-border: #e5e7eb;
+    --md-text-main: #111827;
+    --md-text-dim: #6b7280;
+    --md-heading: #1f2937;
+    --md-soft-bg: #f9fafb;
+  }
+
+  body {
+    background-color: #f3f4f6;
+    color: var(--md-text-main);
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin: 0;
+  }
+
+  .invoice-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* --- BRAND SECTION --- */
+  .invoice-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .invoice-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 2px;
+    display: inline-block;
+  }
+
+  .invoice-brand-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--md-heading); /* black heading colour */
+    line-height: 1.1;
+    display: inline-block;
+  }
+
+  @media (max-width: 576px) {
+    .invoice-brand-text {
+      font-size: 1.2rem;
+    }
+    .invoice-logo {
+      height: 55px;
+    }
+  }
+
+  /* --- MAIN CARD --- */
+  .invoice-card {
+    background-color: var(--md-surface);
+    border-radius: 0.75rem;
+    box-shadow:
+      0 12px 24px rgba(0,0,0,.06),
+      0 2px 4px rgba(0,0,0,.04);
+    border: 1px solid var(--md-border);
+    overflow: hidden;
+  }
+
+  .invoice-header-bar {
+    padding: 2rem 2rem 1rem;
+    position: relative;
+  }
+
+  .invoice-header-bar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 2rem;             /* match left padding */
+    right: 2rem;            /* match right padding */
+    height: 1px;
+    background-color: var(--md-border);
+  }
+
+  .invoice-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--md-heading);
+    line-height: 1.2;
+  }
+
+  /* --- INVOICE META --- */
+  .invoice-meta {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--md-heading);
+    line-height: 1.3;
+    text-align: right;
+  }
+
+  .invoice-meta .meta-row {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--md-heading);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .invoice-meta small {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--md-heading);
+    line-height: 1.3;
+    display: block;
+    margin: 0;
+  }
+
+  .payment-method {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--md-heading);
+    line-height: 1.3;
+    text-align: right;
+    margin-top: 0.5rem;
+  }
+
+  .payment-method strong {
+    font-weight: 600;
+    color: var(--md-heading);
+  }
+
+  /* --- COMPANY DETAILS --- */
+  .company-block {
+    padding: 1.5rem 2rem 0;
+  }
+
+  .company-label {
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--md-text-dim);
+    letter-spacing: .05em;
+    margin-bottom: .5rem;
+  }
+
+  .company-name {
+    font-weight: 600;
+    color: var(--md-heading);
+    font-size: 1rem;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .company-address {
+    font-size: .9rem;
+    color: var(--md-text-main);
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    white-space: pre-line;
+  }
+
+  /* --- TABLE SECTION --- */
+  .items-section {
+    padding: 1.5rem 2rem 2rem;
+  }
+
+  .table-items {
+    border: 1px solid var(--md-border);
+    border-radius: .5rem;
+    overflow: hidden;
+    background-color: var(--md-surface);
+  }
+
+  .table-items thead tr {
+    background-color: var(--md-soft-bg);
+  }
+
+  .table-items th {
+    font-size: .8rem;
+    letter-spacing: .05em;
+    color: var(--md-text-dim);
+    font-weight: 600;
+    border-bottom: 1px solid var(--md-border) !important;
+    background-color: var(--md-soft-bg);
+  }
+
+  .table-items td {
+    vertical-align: top;
+    font-size: .9rem;
+    color: var(--md-text-main);
+    border-bottom: 1px solid var(--md-border);
+  }
+
+  .table-items tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* --- TOTALS --- */
+  .totals-row {
+    background-color: var(--md-soft-bg);
+  }
+
+  .totals-label {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--md-text-dim);
+    line-height: 1.2;
+  }
+
+  .totals-value {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--md-heading);
+    line-height: 1.2;
+  }
+
+  /* Add spacing between subtotal and VAT */
+  .totals-label:not(:last-child),
+  .totals-value:not(:last-child) {
+    margin-bottom: 0.4rem;
+  }
+
+  .grand-total-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--md-heading);
+  }
+
+  .grand-total-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--md-heading);
+  }
+
+  /* --- FOOTER --- */
+  .footer-note {
+    font-size: .7rem;
+    color: var(--md-text-dim);
+    text-align: center;
+    line-height: 1.4;
+    padding: 2rem;
+    border-top: 1px solid var(--md-border);
+    background-color: #fff;
+  }
+
+  /* Export to PDF button */
+  #exportPDF {
+    margin-bottom: 1rem;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      display: block;
+      align-items: initial;
+      justify-content: initial;
+      min-height: auto;
+    }
+    .invoice-wrapper {
+      max-width: 100%;
+      margin: 0;
+    }
+    .invoice-card {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .invoice-meta,
+    .payment-method {
+      text-align: left;
+    }
+    /* hide export button in print/PDF mode */
+    #exportPDF {
+      display: none !important;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="invoice-wrapper">
+
+    <!-- Export button -->
+    <div class="text-end">
+      <button id="exportPDF" class="btn btn-dark btn-sm">
+        Export to PDF
+      </button>
+    </div>
+
+    <div class="invoice-card" id="invoiceCard">
+      <!-- Top header -->
+      <div class="invoice-header-bar">
+        <div class="row align-items-start">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="invoice-brand">
+              <img src="assets/brandLogo.png" alt="UBDomains Logo" class="invoice-logo">
+              <span class="invoice-brand-text">UB Domains</span>
+            </div>
+          </div>
+
+          <div class="col-md-6 text-md-end">
+            <div class="invoice-title mb-2">Invoice</div>
+            <div class="invoice-meta">
+              <div class="meta-row">
+                <span class="fw-semibold">Invoice Number:</span>
+                <span id="invoiceNumber"></span>
+              </div>
+
+              <div class="meta-row">
+                <span class="fw-semibold">Invoice Date:</span>
+                <span id="invoiceDate"></span>
+              </div>
+
+              <div class="meta-row">
+                <span class="fw-semibold">Invoice Due Date:</span>
+                <span id="invoiceDueDate"></span>
+              </div>
+
+              <div class="meta-row mt-2">
+                <span class="fw-semibold">Payment Method:</span>
+                <span id="paymentMethod">Vaste Technologies Ltd (card)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Addresses -->
+      <div class="company-block">
+        <div class="row">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="company-name">Vaste Technologies Ltd</div>
+            <div class="company-address">PO Box 24238
+Edinburgh
+EH7 9HR
+United Kingdom
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="company-name">UB Domains</div>
+            <div class="company-address text-md-end">25 Eskbank Rd
+Dalkeith
+Edinburgh
+EH22 1HJ
+United Kingdom
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Items -->
+      <div class="items-section">
+        <div class="table-responsive table-items mb-4">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th class="w-75">Item</th>
+                <th class="text-end">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>'Linux Supreme' hosting package</td><td class="text-end">£107.88</td></tr>
+              <tr><td>.bio domain registration (vaste.bio) (1 year)</td><td class="text-end">£64.99</td></tr>
+
+              <tr class="totals-row">
+                <td class="text-end">
+                  <div class="totals-label">Subtotal:</div>
+                  <div class="totals-label">VAT (GBR) 20.00%:</div>
+                  <div class="grand-total-label mt-2">Total:</div>
+                </td>
+                <td class="text-end">
+                  <div class="totals-value">0</div>
+                  <div class="totals-value">0</div>
+                  <div class="grand-total-value mt-2">0</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-note">
+          UB Domains · A company of <i>Ugly Bat Creative Studio Ltd</i> (Company No. SC817539) | Email: sales@ubdomains.com
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Bootstrap JS bundle -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  crossorigin="anonymous"
+></script>
+
+<!-- html2pdf.js for PDF export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+(function () {
+  /* ----------------------------------------
+     CONFIGURATION
+  ---------------------------------------- */
+  const VAT_RATE = 0.20;            // 20% VAT
+  const CLIENT_INITIALS = "VT";     // e.g. "VT" for Vaste Technologies Ltd
+  const PAYMENT_METHOD = "Vaste Technologies Ltd (card)"; // can be dynamic later
+  const DUE_DAYS = 30;              // Net 30 payment terms
+
+  // helper: pad 0
+  function pad(n) {
+    return n.toString().padStart(2, "0");
+  }
+
+  // format DD/MM/YYYY
+  function formatDisplayDate(dateObj) {
+    const d = pad(dateObj.getDate());
+    const m = pad(dateObj.getMonth() + 1);
+    const y = dateObj.getFullYear();
+    return `${d}/${m}/${y}`;
+  }
+
+  // add N days
+  function addDays(dateObj, days) {
+    const result = new Date(dateObj);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  // timestamp YYMMDDHHMMSS
+  function timestampPart() {
+    const now = new Date();
+    const yy   = now.getFullYear().toString().slice(-2);
+    const mm   = pad(now.getMonth() + 1);
+    const dd   = pad(now.getDate());
+    const hh   = pad(now.getHours());
+    const min  = pad(now.getMinutes());
+    const sec  = pad(now.getSeconds());
+    return `${yy}${mm}${dd}${hh}${min}${sec}`;
+  }
+
+  // VTYYMMDDHHMMSS-XX
+  function generateInvoiceNumber() {
+    const rand = Math.floor(Math.random() * 90 + 10); // 10-99
+    return `${CLIENT_INITIALS}${timestampPart()}-${rand}`;
+  }
+
+  // calculate totals and inject everything
+  function populateInvoice() {
+    // totals
+    const priceCells = document.querySelectorAll(
+      ".table-items tbody tr:not(.totals-row) td.text-end"
+    );
+
+    let subtotal = 0;
+    priceCells.forEach(cell => {
+      const value = parseFloat(cell.textContent.replace(/[£,]/g, "").trim());
+      if (!isNaN(value)) subtotal += value;
+    });
+
+    const vat = subtotal * VAT_RATE;
+    const total = subtotal + vat;
+
+    const totalsValueEls = document.querySelectorAll(".totals-value");
+    if (totalsValueEls[0]) totalsValueEls[0].textContent = `£${subtotal.toFixed(2)}`;
+    if (totalsValueEls[1]) totalsValueEls[1].textContent = `£${vat.toFixed(2)}`;
+
+    const grandTotalEl = document.querySelector(".grand-total-value");
+    if (grandTotalEl) grandTotalEl.textContent = `£${total.toFixed(2)}`;
+
+    // dates + invoice number
+    const now = new Date();
+    const due = addDays(now, DUE_DAYS);
+
+    const invoiceNumberEl = document.getElementById("invoiceNumber");
+    const invoiceDateEl = document.getElementById("invoiceDate");
+    const invoiceDueDateEl = document.getElementById("invoiceDueDate");
+    const paymentMethodEl = document.getElementById("paymentMethod");
+
+    if (invoiceNumberEl)   invoiceNumberEl.textContent   = generateInvoiceNumber();
+    if (invoiceDateEl)     invoiceDateEl.textContent     = formatDisplayDate(now);
+    if (invoiceDueDateEl)  invoiceDueDateEl.textContent  = formatDisplayDate(due);
+    if (paymentMethodEl)   paymentMethodEl.textContent   = PAYMENT_METHOD;
+  }
+
+  // export to PDF
+  function attachPDFExport() {
+    const exportBtn = document.getElementById("exportPDF");
+    const invoiceCard = document.getElementById("invoiceCard");
+
+    if (!exportBtn || !invoiceCard) return;
+
+    exportBtn.addEventListener("click", () => {
+      console.log("Export button clicked");
+
+      // make sure html2pdf exists
+      if (typeof html2pdf === "undefined") {
+        console.error("html2pdf is not loaded");
+        alert("PDF export library did not load.");
+        return;
+      }
+
+      // pull current invoice number for filename
+      const invoiceNumberEl = document.getElementById("invoiceNumber");
+      const fileName = invoiceNumberEl
+        ? invoiceNumberEl.textContent.trim() || "Invoice"
+        : "Invoice";
+
+      const opt = {
+        margin:       10,
+        filename:     `${fileName}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(invoiceCard).save();
+    });
+  }
+
+  // run once DOM is ready
+  document.addEventListener("DOMContentLoaded", () => {
+    populateInvoice();
+    attachPDFExport();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+version: '3.8'
+
+name: vaste
+
+services:
+  # PostgreSQL 16 - Main database
+  postgres:
+    container_name: vaste-postgres
+    image: postgres:16-alpine
+    restart: unless-stopped
+    ports:
+      - "${POSTGRES_PORT:-5434}:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-vaste}
+      POSTGRES_USER: ${POSTGRES_USER:-vaste}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secret}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-vaste}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vaste
+
+  # Redis 7 - Cache and Queue
+  redis:
+    container_name: vaste-redis
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6380}:6379"
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-secret}
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vaste
+
+  # pgAdmin 4 - Database Management UI
+  pgadmin:
+    container_name: vaste-pgadmin
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    ports:
+      - "${PGADMIN_PORT:-5051}:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@vaste.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-secret}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - vaste
+
+  # Mailpit - Email testing
+  mailpit:
+    container_name: vaste-mailpit
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1026}:1025"  # SMTP port
+      - "${MAILPIT_HTTP_PORT:-8026}:8025"  # Web UI port
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+    networks:
+      - vaste
+
+networks:
+  vaste:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  pgadmin_data:
+    driver: local
