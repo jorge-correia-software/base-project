@@ -2,7 +2,7 @@
 
 **Business Acceleration and Support Enterprise**
 
-A WordPress-style Content Management System built with Laravel 12, designed for the Scottish business accelerator platform. Features a modern admin interface powered by Material Dashboard 3 with custom BASE branding (Pink #FF4D8D and Yellow #FFD700).
+A Content Management System built with Laravel 12, designed for Edinburgh College's Business Advice Suppor Entrepreneurs (BASE) platform. Features a modern admin interface powered by Material Dashboard 3 with custom BASE branding (Pink #FF4D8D and Yellow #FFD700).
 
 ---
 
