@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,          // 2. Create admin users
             PageSeeder::class,          // 3. Create static pages (Privacy, Terms, etc.)
             BaseContentSeeder::class,   // 4. Create content (programs, support areas, posts, etc.)
+            ActivitySeeder::class,      // 5. Create 50 activities from React codebase
+            HighlightSeeder::class,     // 6. Create 3 highlights from React codebase
         ]);
 
         $this->command->newLine();
@@ -37,6 +39,8 @@ class DatabaseSeeder extends Seeder
         $this->command->info('✅ 4 Categories & 6 Tags created');
         $this->command->info('✅ 3 Sample Posts created');
         $this->command->info('✅ 10 Site Settings created');
+        $this->command->info('✅ 50 Activities created (from React codebase)');
+        $this->command->info('✅ 3 Highlights created (from React codebase)');
         $this->command->newLine();
         $this->command->info('🔐 ADMIN LOGIN:');
         $this->command->info('   URL: http://localhost/base/admin');

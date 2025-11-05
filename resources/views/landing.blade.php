@@ -3,32 +3,16 @@
 @section('content')
 
 <!-- Hero Section -->
-<section id="home" class="hero-section">
-    <div class="hero-gradient-overlay"></div>
-    <div class="container hero-content">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div class="fade-in-up">
-                    <h1 class="hero-title">
-                        Empowering <span class="gradient-text">Business Growth</span> in Scotland
+<section id="home" class="hero-section-reference">
+    <div class="hero-content-reference">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1 class="hero-title-reference fade-in-up">
+                        <div class="hero-title-line">Base-jump</div>
+                        <div class="hero-title-line">Into</div>
+                        <div class="hero-title-line">Entrepreneurship</div>
                     </h1>
-                    <p class="hero-subtitle">
-                        BASE provides comprehensive support, funding opportunities, and expert guidance to help Scottish businesses thrive and succeed.
-                    </p>
-                    <div class="d-flex gap-3 flex-wrap">
-                        <a href="#programs" class="btn btn-primary btn-lg rounded-pill px-5">
-                            Explore Programs
-                            <i class="material-icons-round align-middle ms-2">arrow_forward</i>
-                        </a>
-                        <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-5">
-                            Get in Touch
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="text-center fade-in-up">
-                    <img src="{{ asset('img/hero-illustration.svg') }}" alt="Business Growth" class="img-fluid" style="max-height: 500px;">
                 </div>
             </div>
         </div>
@@ -36,343 +20,340 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="section bg-light-pink">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title gradient-text">About BASE</h2>
-                <p class="section-subtitle mt-4">
-                    Business Acceleration and Support Enterprise (BASE) is Scotland's premier business support organization, dedicated to fostering innovation, growth, and sustainability across all sectors.
-                </p>
-            </div>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">target</i>
-                    </div>
-                    <h3 class="card-title">Our Mission</h3>
-                    <p class="card-text">
-                        To empower Scottish businesses with the tools, resources, and support needed to achieve sustainable growth and competitive advantage.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">visibility</i>
-                    </div>
-                    <h3 class="card-title">Our Vision</h3>
-                    <p class="card-text">
-                        To be the leading catalyst for business innovation and excellence throughout Scotland, driving economic prosperity for all.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mx-auto">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">favorite</i>
-                    </div>
-                    <h3 class="card-title">Our Values</h3>
-                    <p class="card-text">
-                        Integrity, innovation, collaboration, and excellence guide everything we do as we support Scotland's business community.
-                    </p>
-                </div>
-            </div>
+<section id="about" class="about-section">
+    <div class="about-container">
+        {{-- First Section: Intro --}}
+        <div class="about-intro">
+            <h2 class="about-label">About</h2>
+            <p class="about-title">What is BASE?</p>
+            <p class="about-description">
+                BASE (<strong>B</strong>usiness <strong>A</strong>dvice and <strong>S</strong>upport for <strong>E</strong>ntrepreneurs) is Edinburgh College's initiative designed to help students, staff, and local businesses develop key enterprise skills. Whether you're starting a business, refining an idea, or looking to enhance your professional skill set, BASE offers expert-led workshops, practical guidance, and networking opportunities to support your entrepreneurial journey.
+            </p>
         </div>
 
-        <!-- Stats -->
-        <div class="row mt-5 pt-5">
-            <div class="col-lg-3 col-md-6 mb-4 text-center">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Businesses Supported</div>
+        {{-- Grid Section: Content + Testimonial --}}
+        <div class="about-grid">
+            {{-- Testimonial (right on lg) --}}
+            <div class="about-testimonial-wrapper">
+                <figure class="about-testimonial-figure">
+                    <blockquote class="about-testimonial-quote">
+                        <p>"BASE has been instrumental in our growth journey. Their support and guidance helped us transform our startup into a thriving business."</p>
+                    </blockquote>
+                    <figcaption class="about-testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1920&auto=format&fit=crop"
+                             alt="Sarah MacKenzie"
+                             class="about-testimonial-avatar">
+                        <div class="about-testimonial-info">
+                            <div class="about-testimonial-name">Sarah MacKenzie</div>
+                            <div class="about-testimonial-title">Founder, Highland Tech Solutions</div>
+                        </div>
+                    </figcaption>
+                </figure>
             </div>
-            <div class="col-lg-3 col-md-6 mb-4 text-center">
-                <div class="stat-number">£10M+</div>
-                <div class="stat-label">Funding Distributed</div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 text-center">
-                <div class="stat-number">1,200+</div>
-                <div class="stat-label">Jobs Created</div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 text-center">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Years Experience</div>
+
+            {{-- Content (left on lg) --}}
+            <div class="about-content">
+                <p class="about-content-text">
+                    Since launching, we've been actively building our presence within Scotland's entrepreneurial ecosystem, offering practical support to businesses at various stages. Our approach blends hands-on experience with forward-thinking ideas to help Scottish businesses develop and grow.
+                </p>
+
+                <ul class="about-list">
+                    <li class="about-list-item">
+                        <span class="about-bullet"></span>
+                        <span>
+                            <strong class="about-list-strong">Expert Network.</strong> Access to experienced mentors, industry professionals, and support across a range of sectors.
+                        </span>
+                    </li>
+                    <li class="about-list-item">
+                        <span class="about-bullet"></span>
+                        <span>
+                            <strong class="about-list-strong">Building Momentum.</strong> We've already begun supporting a growing number of businesses and individuals on their journey.
+                        </span>
+                    </li>
+                    <li class="about-list-item">
+                        <span class="about-bullet"></span>
+                        <span>
+                            <strong class="about-list-strong">Innovation Focus.</strong> Programmes and resources designed to support the evolving needs of modern business.
+                        </span>
+                    </li>
+                    <li class="about-list-item">
+                        <span class="about-bullet"></span>
+                        <span>
+                            <strong class="about-list-strong">BASE Hubs.</strong> We have dedicated BASE hubs at each Edinburgh College campus. These spaces are used to host workshops, provide one-to-one business support, and connect students and local businesses with opportunities around enterprise and innovation.
+                        </span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Programs Section -->
-<section id="programs" class="section">
+<!-- Partners Section -->
+<section id="partners" class="section bg-light">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title gradient-text">Our Programs</h2>
-                <p class="section-subtitle mt-4">
-                    Tailored programs designed to accelerate your business growth at every stage of your journey.
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <p class="text-primary-pink fw-semibold mb-2">Our Partners</p>
+                <h2 class="display-5 fw-bold text-dark mb-3">Working Together for Success</h2>
+                <p class="fs-5 text-muted mb-4">Uniting Vision, Igniting Growth</p>
+                <p class="text-muted mb-5">
+                    BASE collaborates with a network of enterprise organisations, universities, and business support services to provide mentorship, industry insights, and hands-on learning opportunities. Our key partners include:
                 </p>
             </div>
         </div>
-        <div class="row g-4" id="programsContainer">
-            @forelse($programs ?? [] as $program)
-            <div class="col-lg-4 col-md-6">
-                <div class="custom-card program-card p-4">
-                    <div class="card-icon">
-                        <i class="material-icons-round">{{ $program->icon ?? 'rocket_launch' }}</i>
-                    </div>
-                    <h3 class="card-title">{{ $program->title }}</h3>
-                    <p class="card-text">{{ $program->description }}</p>
-                    @if($program->link_url)
-                        <a href="{{ $program->link_url }}" class="btn btn-sm btn-outline-primary rounded-pill mt-3">
-                            {{ $program->link_text }}
-                            <i class="material-icons-round align-middle ms-1" style="font-size: 16px;">arrow_forward</i>
+
+        <div class="partners-carousel-wrapper position-relative mt-5 mb-5">
+            <div class="partners-carousel-overlay partners-carousel-overlay-left"></div>
+            <div class="partners-carousel">
+                <div class="partners-carousel-track">
+                    <div class="partner-logo-item">
+                        <a href="https://www.elevatoruk.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/elevator-uk.svg') }}" alt="Elevator UK" class="partner-logo">
                         </a>
-                    @endif
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.brightredtriangle.co.uk" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/brt_logo.png') }}" alt="BRT" class="partner-logo">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.bgateway.com/local-offices/edinburgh/local-support" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/bg-edinburgh.png') }}" alt="Business Gateway Edinburgh" class="partner-logo">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.bgateway.com/local-offices/midlothian/local-support" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/bg-midlothian.png') }}" alt="Business Gateway Midlothian" class="partner-logo partner-logo-large">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.mcoe.org.uk/" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/mc_coa.png') }}" alt="The Royal Company of Merchants of Edinburgh" class="partner-logo">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.qmu.ac.uk" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/qmu.png') }}" alt="Queen Margaret University" class="partner-logo partner-logo-medium">
+                        </a>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="partner-logo-item">
+                        <a href="https://www.elevatoruk.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/elevator-uk.svg') }}" alt="Elevator UK" class="partner-logo">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.brightredtriangle.co.uk" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/brt_logo.png') }}" alt="BRT" class="partner-logo">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.bgateway.com/local-offices/edinburgh/local-support" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/bg-edinburgh.png') }}" alt="Business Gateway Edinburgh" class="partner-logo">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.bgateway.com/local-offices/midlothian/local-support" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/bg-midlothian.png') }}" alt="Business Gateway Midlothian" class="partner-logo partner-logo-large">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.mcoe.org.uk/" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/mc_coa.png') }}" alt="The Royal Company of Merchants of Edinburgh" class="partner-logo">
+                        </a>
+                    </div>
+                    <div class="partner-logo-item">
+                        <a href="https://www.qmu.ac.uk" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('img/partners/qmu.png') }}" alt="Queen Margaret University" class="partner-logo partner-logo-medium">
+                        </a>
+                    </div>
                 </div>
+            </div>
+            <div class="partners-carousel-overlay partners-carousel-overlay-right"></div>
+        </div>
+
+        <div class="row justify-content-center text-center mt-5">
+            <div class="col-lg-8">
+                <p class="text-muted">
+                    These partnerships ensure that BASE participants gain access to the best resources and support available for developing their business ideas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Activities Section -->
+<section id="activities" class="section position-relative activities-section">
+    <div class="activities-gradient-blur"></div>
+    <div class="container position-relative">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8 mb-5">
+                <p class="text-primary-pink fw-semibold mb-2">Accelerate Your Growth</p>
+                <h2 class="display-5 fw-bold text-dark mb-3">Activities That Drive Success</h2>
+                <p class="fs-6 text-muted">
+                    Choose from our range of specialised activities designed to support businesses at every stage of their journey.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            @forelse($activities ?? [] as $activity)
+            <div class="col-lg-4 col-md-6">
+                <article class="activity-card">
+                    <div class="activity-card-image">
+                        <img src="{{ $activity->image_url }}" alt="{{ $activity->name }}" class="w-100">
+                        <div class="activity-card-image-overlay"></div>
+                    </div>
+                    <div class="activity-card-body">
+                        <div class="d-flex gap-2 align-items-center mb-3">
+                            <span class="badge bg-primary-pink text-white px-3 py-2">{{ $activity->company }}</span>
+                            <time class="small text-muted">{{ $activity->date->format('M d, Y') }}</time>
+                        </div>
+                        <h3 class="activity-card-title h5 fw-bold mb-3">{{ $activity->name }}</h3>
+                        <p class="activity-card-description text-muted">{{ Str::limit($activity->description, 100) }}</p>
+                    </div>
+                    <div class="activity-card-footer">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="activity-icon-wrapper">
+                                <i class="material-icons-round">{{ strtolower($activity->icon) }}</i>
+                            </div>
+                            <div>
+                                <p class="fw-semibold mb-0 small">{{ $activity->company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
             @empty
-            <!-- Default Programs -->
-            <div class="col-lg-4 col-md-6">
-                <div class="custom-card program-card p-4">
-                    <div class="card-icon">
-                        <i class="material-icons-round">rocket_launch</i>
-                    </div>
-                    <h3 class="card-title">Startup Accelerator</h3>
-                    <p class="card-text">
-                        Intensive support for early-stage businesses with mentorship, funding access, and growth resources.
-                    </p>
-                    <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-3">
-                        Learn More
-                        <i class="material-icons-round align-middle ms-1" style="font-size: 16px;">arrow_forward</i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="custom-card program-card p-4">
-                    <div class="card-icon">
-                        <i class="material-icons-round">trending_up</i>
-                    </div>
-                    <h3 class="card-title">Growth Programme</h3>
-                    <p class="card-text">
-                        Strategic support for established businesses looking to scale operations and expand market reach.
-                    </p>
-                    <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-3">
-                        Learn More
-                        <i class="material-icons-round align-middle ms-1" style="font-size: 16px;">arrow_forward</i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="custom-card program-card p-4">
-                    <div class="card-icon">
-                        <i class="material-icons-round">eco</i>
-                    </div>
-                    <h3 class="card-title">Sustainability Initiative</h3>
-                    <p class="card-text">
-                        Helping businesses transition to sustainable practices with expert guidance and green funding opportunities.
-                    </p>
-                    <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-3">
-                        Learn More
-                        <i class="material-icons-round align-middle ms-1" style="font-size: 16px;">arrow_forward</i>
-                    </a>
-                </div>
+            <div class="col-12 text-center">
+                <p class="text-muted">No upcoming activities at this time. Check back soon!</p>
             </div>
             @endforelse
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/activities" class="btn btn-primary btn-lg rounded-pill px-5">
+                View All Activities
+            </a>
         </div>
     </div>
 </section>
 
 <!-- Support Section -->
-<section id="support" class="section bg-light-pink">
+<section id="support" class="section bg-light">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title gradient-text">Support Areas</h2>
-                <p class="section-subtitle mt-4">
-                    Comprehensive support across all aspects of your business operations and development.
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8 mb-5">
+                <p class="text-primary-pink fw-semibold mb-2">Business Support</p>
+                <h2 class="display-5 fw-bold text-dark mb-3">Comprehensive Support for Your Business</h2>
+                <p class="fs-6 text-muted">
+                    Access expert guidance and resources across key business areas to help your company thrive and grow.
                 </p>
             </div>
         </div>
-        <div class="row g-4">
-            @forelse($supportAreas ?? [] as $area)
-            <div class="col-lg-3 col-md-6">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">{{ $area->icon ?? 'support' }}</i>
-                    </div>
-                    <h4 class="card-title h5">{{ $area->title }}</h4>
-                    <p class="card-text small">{{ $area->description }}</p>
-                </div>
-            </div>
-            @empty
-            <!-- Default Support Areas -->
-            <div class="col-lg-3 col-md-6">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">account_balance</i>
-                    </div>
-                    <h4 class="card-title h5">Funding & Grants</h4>
-                    <p class="card-text small">Access to various funding opportunities and grant applications</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">school</i>
-                    </div>
-                    <h4 class="card-title h5">Training & Development</h4>
-                    <p class="card-text small">Professional development and skills training programs</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">groups</i>
-                    </div>
-                    <h4 class="card-title h5">Mentorship</h4>
-                    <p class="card-text small">One-on-one guidance from experienced business leaders</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="custom-card text-center p-4">
-                    <div class="card-icon mx-auto">
-                        <i class="material-icons-round">network_check</i>
-                    </div>
-                    <h4 class="card-title h5">Networking</h4>
-                    <p class="card-text small">Connect with partners, investors, and fellow entrepreneurs</p>
-                </div>
-            </div>
-            @endforelse
-        </div>
-    </div>
-</section>
 
-<!-- Testimonials Section -->
-<section class="section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title gradient-text">Success Stories</h2>
-                <p class="section-subtitle mt-4">
-                    Hear from businesses that have grown with BASE support.
-                </p>
-            </div>
-        </div>
         <div class="row g-4">
-            @forelse($testimonials ?? [] as $testimonial)
+            <!-- Financial Guidance -->
             <div class="col-lg-4 col-md-6">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-text">{{ $testimonial->content }}</div>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">
-                            {{ substr($testimonial->author_name, 0, 1) }}
-                        </div>
-                        <div>
-                            <div class="fw-bold">{{ $testimonial->author_name }}</div>
-                            <div class="text-muted small">{{ $testimonial->author_title }}</div>
-                            @if($testimonial->author_company)
-                                <div class="text-muted small">{{ $testimonial->author_company }}</div>
-                            @endif
-                        </div>
+                <article class="activity-card">
+                    <div class="activity-card-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1920&auto=format&fit=crop" alt="Financial Guidance" class="w-100">
+                        <div class="activity-card-image-overlay"></div>
                     </div>
-                </div>
+                    <div class="activity-card-body">
+                        <h3 class="activity-card-title h5 fw-bold mb-3 text-white">Financial Guidance</h3>
+                        <p class="activity-card-description text-white-50">Expert advice on funding, investments, and financial planning for your business.</p>
+                    </div>
+                </article>
             </div>
-            @empty
-            <!-- Default Testimonials -->
-            <div class="col-lg-4 col-md-6">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-text">
-                        BASE provided the perfect springboard for our startup. The mentorship and funding support were invaluable in our first year.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">S</div>
-                        <div>
-                            <div class="fw-bold">Sarah Mitchell</div>
-                            <div class="text-muted small">CEO, TechFlow Solutions</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-text">
-                        The Growth Programme helped us expand into new markets we never thought possible. Outstanding support every step of the way.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">J</div>
-                        <div>
-                            <div class="fw-bold">James Robertson</div>
-                            <div class="text-muted small">Founder, Scottish Craft Co.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-text">
-                        Thanks to BASE's sustainability initiative, we've cut costs and reduced our carbon footprint. A true win-win for our business.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">E</div>
-                        <div>
-                            <div class="fw-bold">Emma Douglas</div>
-                            <div class="text-muted small">Managing Director, EcoManufacturing Ltd</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforelse
-        </div>
-    </div>
-</section>
 
-<!-- News Section -->
-<section id="news" class="section bg-light-pink">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title gradient-text">Latest News</h2>
-                <p class="section-subtitle mt-4">
-                    Stay updated with the latest insights, announcements, and success stories.
-                </p>
-            </div>
-        </div>
-        <div class="row g-4">
-            @forelse($posts ?? [] as $post)
+            <!-- Marketing Strategy -->
             <div class="col-lg-4 col-md-6">
-                <x-post-card :post="$post" :excerptLimit="100" :showViews="false" />
-            </div>
-            @empty
-            <!-- Default News Items -->
-            <div class="col-lg-4 col-md-6">
-                <div class="custom-card overflow-hidden">
-                    <div class="bg-gradient-primary" style="height: 200px;"></div>
-                    <div class="p-4">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="badge bg-primary-pink text-white">News</span>
-                            <small class="text-muted">{{ now()->format('M d, Y') }}</small>
-                        </div>
-                        <h4 class="card-title h5">New Funding Opportunities Available</h4>
-                        <p class="card-text">BASE announces £2M in new funding for Scottish startups in tech and sustainability sectors...</p>
-                        <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill">
-                            Read More
-                            <i class="material-icons-round align-middle ms-1" style="font-size: 16px;">arrow_forward</i>
-                        </a>
+                <article class="activity-card">
+                    <div class="activity-card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920&auto=format&fit=crop" alt="Marketing Strategy" class="w-100">
+                        <div class="activity-card-image-overlay"></div>
                     </div>
-                </div>
+                    <div class="activity-card-body">
+                        <h3 class="activity-card-title h5 fw-bold mb-3 text-white">Marketing Strategy</h3>
+                        <p class="activity-card-description text-white-50">Develop effective marketing plans and digital presence to reach your target audience.</p>
+                    </div>
+                </article>
             </div>
-            @endforelse
+
+            <!-- Innovation Vouchers -->
+            <div class="col-lg-4 col-md-6">
+                <article class="activity-card">
+                    <div class="activity-card-image">
+                        <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=1920&auto=format&fit=crop" alt="Innovation Vouchers" class="w-100">
+                        <div class="activity-card-image-overlay"></div>
+                    </div>
+                    <div class="activity-card-body">
+                        <h3 class="activity-card-title h5 fw-bold mb-3 text-white">Innovation Vouchers</h3>
+                        <p class="activity-card-description text-white-50">This funding offers up to £7,500 on innovative projects.</p>
+                    </div>
+                </article>
+            </div>
         </div>
+
         <div class="text-center mt-5">
-            <a href="{{ route('posts.index') }}" class="btn btn-primary btn-lg rounded-pill px-5">
-                View All News
-                <i class="material-icons-round align-middle ms-2">arrow_forward</i>
+            <a href="/support" class="btn btn-primary btn-lg rounded-pill px-5">
+                Know More
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- News/Highlights Section -->
+<section id="news" class="section position-relative bg-white">
+    <div class="activities-gradient-blur"></div>
+    <div class="container position-relative">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8 mb-5">
+                <p class="text-primary-pink fw-semibold mb-2">Latest Updates</p>
+                <h2 class="display-5 fw-bold text-dark mb-3">Highlights & Success Stories</h2>
+                <p class="fs-6 text-muted">
+                    Stay updated with the latest highlights, events, and inspiring success stories from our business community.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            @forelse($highlights ?? [] as $highlight)
+            <div class="col-lg-4 col-md-6">
+                <article class="activity-card">
+                    <div class="activity-card-image">
+                        <img src="{{ $highlight->image_url }}" alt="{{ $highlight->title }}" class="w-100">
+                        <div class="activity-card-image-overlay"></div>
+                    </div>
+                    <div class="activity-card-body">
+                        <div class="d-flex gap-2 align-items-center mb-3">
+                            <span class="badge bg-primary-pink text-white px-3 py-2">{{ $highlight->category }}</span>
+                            <time class="small text-muted">{{ $highlight->date->format('M d, Y') }}</time>
+                        </div>
+                        <h3 class="activity-card-title h5 fw-bold mb-3">{{ $highlight->title }}</h3>
+                        <p class="activity-card-description text-muted">{{ Str::limit($highlight->description, 100) }}</p>
+                    </div>
+                    <div class="activity-card-footer">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="{{ $highlight->author_avatar }}" alt="{{ $highlight->author_name }}" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid white;">
+                            <div>
+                                <p class="fw-semibold mb-0 small">{{ $highlight->author_name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            @empty
+            <div class="col-12 text-center">
+                <p class="text-muted">No highlights available at this time. Check back soon!</p>
+            </div>
+            @endforelse
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/highlights" class="btn btn-primary btn-lg rounded-pill px-5">
+                View All Highlights
             </a>
         </div>
     </div>

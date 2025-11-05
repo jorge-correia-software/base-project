@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Program;
-use App\Models\SupportArea;
-use App\Models\Testimonial;
 use App\Models\Post;
+use App\Models\Activity;
+use App\Models\Highlight;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,19 +16,18 @@ class HomeController extends Controller
             ->orderBy('order')
             ->get();
 
-        $supportAreas = SupportArea::where('is_active', true)
-            ->orderBy('order')
-            ->get();
-
-        $testimonials = Testimonial::where('is_active', true)
-            ->where('is_featured', true)
-            ->orderBy('order')
-            ->take(3)
-            ->get();
-
         $posts = Post::published()
             ->with(['category', 'featuredImage'])
             ->latest('published_at')
+            ->take(3)
+            ->get();
+
+        $activities = Activity::where('date', '>=', now())
+            ->orderBy('date')
+            ->take(6)
+            ->get();
+
+        $highlights = Highlight::orderBy('date', 'desc')
             ->take(3)
             ->get();
 
@@ -38,6 +37,6 @@ class HomeController extends Controller
             'keywords' => 'business support scotland, grants scotland, business funding, scottish startups, business acceleration',
         ];
 
-        return view('landing', compact('programs', 'supportAreas', 'testimonials', 'posts', 'seo'));
+        return view('landing', compact('programs', 'posts', 'activities', 'highlights', 'seo'));
     }
 }
