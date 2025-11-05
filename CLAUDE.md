@@ -304,12 +304,12 @@ See `docs/REFURBISHMENT_PROGRESS.md` and `docs/IMPLEMENTATION_GUIDE.md` for deta
 
 - **PHP Path:** `/mnt/c/xampp/php/php.exe` (WSL environment)
 - **Working Directory:** `/mnt/c/xampp/htdocs/base`
-- **NOT a Git Repository:** Project is not version controlled yet
+- **Repository:** https://github.com/jorge-correia-software/base-project (private)
 - **Previous System:** Multi-tenancy (Stancl/Tenancy) was removed during refurbishment
 
 ## Git Commit Guidelines
 
-When the project becomes version controlled, follow these guidelines:
+Follow these guidelines for all commits:
 
 - **Conventional Commits:** Use Conventional Commits formatting for all git commits (e.g., `feat:`, `fix:`, `chore:`, `docs:`)
 - **Conventional Branch Naming:** Use prefix-based branch naming (e.g., `feature/`, `bugfix/`, `hotfix/`, `refactor/`)
@@ -317,10 +317,8 @@ When the project becomes version controlled, follow these guidelines:
 
 ## CLI Tooling Reminders
 
-**Note:** This project is NOT currently a git repository. When it becomes version controlled:
-
 - Use the `gh` CLI tool when appropriate to create issues, open pull requests, read comments, etc.
-- The `gh` tool is available and can be used for interacting with GitHub (reading public repos, etc.)
+- The `gh` tool is authenticated and available for all GitHub operations
 - Leverage `gh` commands for efficient GitHub workflow automation
 
 ## Security Notes
