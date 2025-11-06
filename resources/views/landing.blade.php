@@ -89,36 +89,36 @@
 </section>
 
 <!-- Partners Section -->
-<section id="partners" class="section bg-light">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-                <p class="text-primary-pink fw-semibold mb-2">Our Partners</p>
-                <h2 class="display-5 fw-bold text-dark mb-3">Working Together for Success</h2>
-                <p class="fs-5 text-muted mb-4">Uniting Vision, Igniting Growth</p>
-                <p class="text-muted mb-5">
-                    BASE collaborates with a network of enterprise organisations, universities, and business support services to provide mentorship, industry insights, and hands-on learning opportunities. Our key partners include:
-                </p>
-            </div>
+<section id="partners" class="partners-section">
+    <div class="partners-container">
+        {{-- Text content --}}
+        <div class="partners-text-container">
+            <h2 class="partners-label">Our Partners</h2>
+            <p class="partners-title">Working Together for Success</p>
+            <p class="partners-subtitle">Uniting Vision, Igniting Growth</p>
+            <p class="partners-description">
+                BASE collaborates with a network of enterprise organisations, universities, and business support services to provide mentorship, industry insights, and hands-on learning opportunities. Our key partners include:
+            </p>
         </div>
 
-        <div class="partners-carousel-wrapper position-relative mt-5 mb-5">
+        {{-- Logo Carousel --}}
+        <div class="partners-carousel-wrapper">
             <div class="partners-carousel-overlay partners-carousel-overlay-left"></div>
             <div class="partners-carousel">
                 <div class="partners-carousel-track">
                     <div class="partner-logo-item">
                         <a href="https://www.elevatoruk.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/elevator-uk.svg') }}" alt="Elevator UK" class="partner-logo">
+                            <img src="{{ asset('img/partners/elevator-uk.svg') }}" alt="Elevator UK" class="partner-logo partner-logo-elevator">
                         </a>
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.brightredtriangle.co.uk" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/brt_logo.png') }}" alt="BRT" class="partner-logo">
+                            <img src="{{ asset('img/partners/brt_logo.png') }}" alt="BRT" class="partner-logo partner-logo-brt">
                         </a>
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.bgateway.com/local-offices/edinburgh/local-support" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/bg-edinburgh.png') }}" alt="Business Gateway Edinburgh" class="partner-logo">
+                            <img src="{{ asset('img/partners/bg-edinburgh.png') }}" alt="Business Gateway Edinburgh" class="partner-logo partner-logo-bg-edinburgh">
                         </a>
                     </div>
                     <div class="partner-logo-item">
@@ -128,28 +128,28 @@
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.mcoe.org.uk/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/mc_coa.png') }}" alt="The Royal Company of Merchants of Edinburgh" class="partner-logo">
+                            <img src="{{ asset('img/partners/mc_coa.png') }}" alt="The Royal Company of Merchants of Edinburgh" class="partner-logo partner-logo-mcoe">
                         </a>
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.qmu.ac.uk" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/qmu.png') }}" alt="Queen Margaret University" class="partner-logo partner-logo-medium">
+                            <img src="{{ asset('img/partners/qmu.png') }}" alt="Queen Margaret University" class="partner-logo partner-logo-qmu">
                         </a>
                     </div>
                     <!-- Duplicate for seamless loop -->
                     <div class="partner-logo-item">
                         <a href="https://www.elevatoruk.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/elevator-uk.svg') }}" alt="Elevator UK" class="partner-logo">
+                            <img src="{{ asset('img/partners/elevator-uk.svg') }}" alt="Elevator UK" class="partner-logo partner-logo-elevator">
                         </a>
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.brightredtriangle.co.uk" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/brt_logo.png') }}" alt="BRT" class="partner-logo">
+                            <img src="{{ asset('img/partners/brt_logo.png') }}" alt="BRT" class="partner-logo partner-logo-brt">
                         </a>
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.bgateway.com/local-offices/edinburgh/local-support" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/bg-edinburgh.png') }}" alt="Business Gateway Edinburgh" class="partner-logo">
+                            <img src="{{ asset('img/partners/bg-edinburgh.png') }}" alt="Business Gateway Edinburgh" class="partner-logo partner-logo-bg-edinburgh">
                         </a>
                     </div>
                     <div class="partner-logo-item">
@@ -159,12 +159,12 @@
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.mcoe.org.uk/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/mc_coa.png') }}" alt="The Royal Company of Merchants of Edinburgh" class="partner-logo">
+                            <img src="{{ asset('img/partners/mc_coa.png') }}" alt="The Royal Company of Merchants of Edinburgh" class="partner-logo partner-logo-mcoe">
                         </a>
                     </div>
                     <div class="partner-logo-item">
                         <a href="https://www.qmu.ac.uk" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('img/partners/qmu.png') }}" alt="Queen Margaret University" class="partner-logo partner-logo-medium">
+                            <img src="{{ asset('img/partners/qmu.png') }}" alt="Queen Margaret University" class="partner-logo partner-logo-qmu">
                         </a>
                     </div>
                 </div>
@@ -172,67 +172,82 @@
             <div class="partners-carousel-overlay partners-carousel-overlay-right"></div>
         </div>
 
-        <div class="row justify-content-center text-center mt-5">
-            <div class="col-lg-8">
-                <p class="text-muted">
-                    These partnerships ensure that BASE participants gain access to the best resources and support available for developing their business ideas.
-                </p>
-            </div>
+        {{-- Bottom text --}}
+        <div class="partners-bottom-text">
+            <p class="partners-bottom-paragraph">
+                These partnerships ensure that BASE participants gain access to the best resources and support available for developing their business ideas.
+            </p>
         </div>
     </div>
 </section>
 
 <!-- Activities Section -->
-<section id="activities" class="section position-relative activities-section">
-    <div class="activities-gradient-blur"></div>
-    <div class="container position-relative">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8 mb-5">
-                <p class="text-primary-pink fw-semibold mb-2">Accelerate Your Growth</p>
-                <h2 class="display-5 fw-bold text-dark mb-3">Activities That Drive Success</h2>
-                <p class="fs-6 text-muted">
-                    Choose from our range of specialised activities designed to support businesses at every stage of their journey.
-                </p>
-            </div>
+<section id="activities" class="activities-section">
+    <div class="activities-container">
+        <div class="activities-text-container">
+            <h2 class="activities-label">Accelerate Your Growth</h2>
+            <p class="activities-title">Activities That Drive Success</p>
+            <p class="activities-description">
+                Choose from our range of specialised activities designed to support<br class="activities-line-break"> businesses at every stage of their journey.
+            </p>
         </div>
 
-        <div class="row g-4">
+        <div class="activities-grid">
             @forelse($activities ?? [] as $activity)
-            <div class="col-lg-4 col-md-6">
-                <article class="activity-card">
-                    <div class="activity-card-image">
-                        <img src="{{ $activity->image_url }}" alt="{{ $activity->name }}" class="w-100">
-                        <div class="activity-card-image-overlay"></div>
+            <article class="activity-card">
+                <div class="activity-card-image">
+                    <img src="{{ $activity->image_url }}" alt="{{ $activity->name }}">
+                    <div class="activity-card-image-overlay"></div>
+                </div>
+                <div class="activity-card-body">
+                    <div class="activity-card-meta">
+                        <span class="activity-badge">{{ $activity->company }}</span>
+                        <time class="activity-date">{{ $activity->date->format('d M Y') }}</time>
                     </div>
-                    <div class="activity-card-body">
-                        <div class="d-flex gap-2 align-items-center mb-3">
-                            <span class="badge bg-primary-pink text-white px-3 py-2">{{ $activity->company }}</span>
-                            <time class="small text-muted">{{ $activity->date->format('M d, Y') }}</time>
+                    <div class="activity-card-content">
+                        <h3 class="activity-card-title">{{ $activity->name }}</h3>
+                        <p class="activity-card-description">{{ Str::limit($activity->description, 100) }}</p>
+                    </div>
+                </div>
+                <div class="activity-card-footer">
+                    <div class="activity-footer-content">
+                        <div class="activity-icon-wrapper">
+                            @php
+                                // Map React icon names to Material Icons
+                                $iconMap = [
+                                    'Briefcase' => 'work',
+                                    'Rocket' => 'rocket_launch',
+                                    'DollarSign' => 'attach_money',
+                                    'Users' => 'people',
+                                    'Target' => 'track_changes',
+                                    'PenTool' => 'edit',
+                                    'Brain' => 'psychology',
+                                    'Coffee' => 'local_cafe',
+                                    'Clock' => 'schedule',
+                                    'Lightbulb' => 'lightbulb',
+                                    'Globe' => 'public',
+                                    'Leaf' => 'eco',
+                                    'Calendar' => 'event',
+                                ];
+                                $materialIcon = $iconMap[$activity->icon] ?? 'event';
+                            @endphp
+                            <i class="material-icons-round">{{ $materialIcon }}</i>
                         </div>
-                        <h3 class="activity-card-title h5 fw-bold mb-3">{{ $activity->name }}</h3>
-                        <p class="activity-card-description text-muted">{{ Str::limit($activity->description, 100) }}</p>
-                    </div>
-                    <div class="activity-card-footer">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="activity-icon-wrapper">
-                                <i class="material-icons-round">{{ strtolower($activity->icon) }}</i>
-                            </div>
-                            <div>
-                                <p class="fw-semibold mb-0 small">{{ $activity->company }}</p>
-                            </div>
+                        <div class="activity-company-name">
+                            <p>{{ $activity->company }}</p>
                         </div>
                     </div>
-                </article>
-            </div>
+                </div>
+            </article>
             @empty
-            <div class="col-12 text-center">
-                <p class="text-muted">No upcoming activities at this time. Check back soon!</p>
+            <div class="activities-empty">
+                <p>No upcoming activities at this time. Check back soon!</p>
             </div>
             @endforelse
         </div>
 
-        <div class="text-center mt-5">
-            <a href="/activities" class="btn btn-primary btn-lg rounded-pill px-5">
+        <div class="activities-button-container">
+            <a href="/activities" class="activities-button">
                 View All Activities
             </a>
         </div>
@@ -240,64 +255,47 @@
 </section>
 
 <!-- Support Section -->
-<section id="support" class="section bg-light">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8 mb-5">
-                <p class="text-primary-pink fw-semibold mb-2">Business Support</p>
-                <h2 class="display-5 fw-bold text-dark mb-3">Comprehensive Support for Your Business</h2>
-                <p class="fs-6 text-muted">
-                    Access expert guidance and resources across key business areas to help your company thrive and grow.
-                </p>
-            </div>
+<section id="support" class="support-section">
+    <div class="support-container">
+        <div class="support-text-container">
+            <h2 class="support-label">Business Support</h2>
+            <p class="support-title">Comprehensive Support for Your Business</p>
+            <p class="support-description">
+                Access expert guidance and resources across key business areas to help<br class="support-line-break"> your company thrive and grow.
+            </p>
         </div>
 
-        <div class="row g-4">
+        <div class="support-grid">
             <!-- Financial Guidance -->
-            <div class="col-lg-4 col-md-6">
-                <article class="activity-card">
-                    <div class="activity-card-image">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1920&auto=format&fit=crop" alt="Financial Guidance" class="w-100">
-                        <div class="activity-card-image-overlay"></div>
-                    </div>
-                    <div class="activity-card-body">
-                        <h3 class="activity-card-title h5 fw-bold mb-3 text-white">Financial Guidance</h3>
-                        <p class="activity-card-description text-white-50">Expert advice on funding, investments, and financial planning for your business.</p>
-                    </div>
-                </article>
-            </div>
+            <article class="support-card">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1920&auto=format&fit=crop" alt="Financial Guidance" class="support-card-image">
+                <div class="support-card-gradient"></div>
+                <div class="support-card-ring"></div>
+                <h3 class="support-card-title">Financial Guidance</h3>
+                <p class="support-card-description">Expert advice on funding, investments, and financial planning for your business.</p>
+            </article>
 
             <!-- Marketing Strategy -->
-            <div class="col-lg-4 col-md-6">
-                <article class="activity-card">
-                    <div class="activity-card-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920&auto=format&fit=crop" alt="Marketing Strategy" class="w-100">
-                        <div class="activity-card-image-overlay"></div>
-                    </div>
-                    <div class="activity-card-body">
-                        <h3 class="activity-card-title h5 fw-bold mb-3 text-white">Marketing Strategy</h3>
-                        <p class="activity-card-description text-white-50">Develop effective marketing plans and digital presence to reach your target audience.</p>
-                    </div>
-                </article>
-            </div>
+            <article class="support-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920&auto=format&fit=crop" alt="Marketing Strategy" class="support-card-image">
+                <div class="support-card-gradient"></div>
+                <div class="support-card-ring"></div>
+                <h3 class="support-card-title">Marketing Strategy</h3>
+                <p class="support-card-description">Develop effective marketing plans and digital presence to reach your target audience.</p>
+            </article>
 
             <!-- Innovation Vouchers -->
-            <div class="col-lg-4 col-md-6">
-                <article class="activity-card">
-                    <div class="activity-card-image">
-                        <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=1920&auto=format&fit=crop" alt="Innovation Vouchers" class="w-100">
-                        <div class="activity-card-image-overlay"></div>
-                    </div>
-                    <div class="activity-card-body">
-                        <h3 class="activity-card-title h5 fw-bold mb-3 text-white">Innovation Vouchers</h3>
-                        <p class="activity-card-description text-white-50">This funding offers up to £7,500 on innovative projects.</p>
-                    </div>
-                </article>
-            </div>
+            <article class="support-card">
+                <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=1920&auto=format&fit=crop" alt="Innovation Vouchers" class="support-card-image">
+                <div class="support-card-gradient"></div>
+                <div class="support-card-ring"></div>
+                <h3 class="support-card-title">Innovation Vouchers</h3>
+                <p class="support-card-description">This funding offers up to £7,500 on innovative projects.</p>
+            </article>
         </div>
 
-        <div class="text-center mt-5">
-            <a href="/support" class="btn btn-primary btn-lg rounded-pill px-5">
+        <div class="support-button-container">
+            <a href="/support" class="support-button">
                 Know More
             </a>
         </div>
@@ -305,54 +303,51 @@
 </section>
 
 <!-- News/Highlights Section -->
-<section id="news" class="section position-relative bg-white">
-    <div class="activities-gradient-blur"></div>
-    <div class="container position-relative">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8 mb-5">
-                <p class="text-primary-pink fw-semibold mb-2">Latest Updates</p>
-                <h2 class="display-5 fw-bold text-dark mb-3">Highlights & Success Stories</h2>
-                <p class="fs-6 text-muted">
-                    Stay updated with the latest highlights, events, and inspiring success stories from our business community.
-                </p>
-            </div>
+<section id="news" class="highlights-section">
+    <div class="highlights-container">
+        <div class="highlights-text-container">
+            <h2 class="highlights-label">Latest Updates</h2>
+            <p class="highlights-title">Highlights & Success Stories</p>
+            <p class="highlights-description">
+                Stay updated with the latest highlights, events, and inspiring success<br class="highlights-line-break"> stories from our business community.
+            </p>
         </div>
 
-        <div class="row g-4">
+        <div class="highlights-grid">
             @forelse($highlights ?? [] as $highlight)
-            <div class="col-lg-4 col-md-6">
-                <article class="activity-card">
-                    <div class="activity-card-image">
-                        <img src="{{ $highlight->image_url }}" alt="{{ $highlight->title }}" class="w-100">
-                        <div class="activity-card-image-overlay"></div>
+            <article class="highlight-card">
+                <div class="highlight-card-image">
+                    <img src="{{ $highlight->image_url }}" alt="{{ $highlight->title }}">
+                    <div class="highlight-card-image-overlay"></div>
+                </div>
+                <div class="highlight-card-body">
+                    <div class="highlight-card-meta">
+                        <span class="highlight-badge">{{ $highlight->category }}</span>
+                        <time class="highlight-date">{{ $highlight->date->format('d M Y') }}</time>
                     </div>
-                    <div class="activity-card-body">
-                        <div class="d-flex gap-2 align-items-center mb-3">
-                            <span class="badge bg-primary-pink text-white px-3 py-2">{{ $highlight->category }}</span>
-                            <time class="small text-muted">{{ $highlight->date->format('M d, Y') }}</time>
+                    <div class="highlight-card-content">
+                        <h3 class="highlight-card-title">{{ $highlight->title }}</h3>
+                        <p class="highlight-card-description">{{ Str::limit($highlight->description, 100) }}</p>
+                    </div>
+                </div>
+                <div class="highlight-card-footer">
+                    <div class="highlight-footer-content">
+                        <img src="{{ $highlight->author_avatar }}" alt="{{ $highlight->author_name }}" class="highlight-author-avatar">
+                        <div class="highlight-author-name">
+                            <p>{{ $highlight->author_name }}</p>
                         </div>
-                        <h3 class="activity-card-title h5 fw-bold mb-3">{{ $highlight->title }}</h3>
-                        <p class="activity-card-description text-muted">{{ Str::limit($highlight->description, 100) }}</p>
                     </div>
-                    <div class="activity-card-footer">
-                        <div class="d-flex align-items-center gap-3">
-                            <img src="{{ $highlight->author_avatar }}" alt="{{ $highlight->author_name }}" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid white;">
-                            <div>
-                                <p class="fw-semibold mb-0 small">{{ $highlight->author_name }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
+                </div>
+            </article>
             @empty
-            <div class="col-12 text-center">
-                <p class="text-muted">No highlights available at this time. Check back soon!</p>
+            <div class="highlights-empty">
+                <p>No highlights available at this time. Check back soon!</p>
             </div>
             @endforelse
         </div>
 
-        <div class="text-center mt-5">
-            <a href="/highlights" class="btn btn-primary btn-lg rounded-pill px-5">
+        <div class="highlights-button-container">
+            <a href="/highlights" class="highlights-button">
                 View All Highlights
             </a>
         </div>
@@ -360,101 +355,59 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title gradient-text">Get in Touch</h2>
-                <p class="section-subtitle mt-4">
-                    Ready to accelerate your business? Contact us today to learn how BASE can support your growth journey.
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <!-- Left side - Text content with full-height background -->
+        <div class="contact-left">
+            <!-- Full-height gray background -->
+            <div class="contact-left-background"></div>
+
+            <div class="contact-left-inner">
+                <h2 class="contact-label">Get in Touch & Connect</h2>
+                <p class="contact-title">Contact Us</p>
+                <p class="contact-description">
+                    Reach out to us for enquiries, support, or collaboration opportunities. We're here to help and look forward to hearing from you.
+                </p>
+                <p class="contact-description-2">
+                    Use the form or email us to start the conversation.
                 </p>
             </div>
         </div>
-        <div class="row g-5">
-            <div class="col-lg-6">
-                <div class="custom-card p-4">
-                    <h4 class="mb-4">Send us a Message</h4>
-                    <form action="{{ route('contact.submit') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name *</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+
+        <!-- Right side - Form -->
+        <form action="{{ route('contact.submit') }}" method="POST" class="contact-right">
+            @csrf
+            <div class="contact-form-inner">
+                <div class="contact-form-grid">
+                    <div class="contact-form-field">
+                        <label for="name" class="contact-label-text">Name</label>
+                        <div class="contact-input-wrapper">
+                            <input type="text" name="name" id="name" autocomplete="name" class="contact-input" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+
+                    <div class="contact-form-field">
+                        <label for="email" class="contact-label-text">Email</label>
+                        <div class="contact-input-wrapper">
+                            <input type="email" name="email" id="email" autocomplete="email" class="contact-input" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" name="phone">
+                    </div>
+
+                    <div class="contact-form-field">
+                        <label for="message" class="contact-label-text">Message</label>
+                        <div class="contact-input-wrapper">
+                            <textarea name="message" id="message" rows="4" class="contact-input" required></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subject *</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message *</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 w-100">
-                            <i class="material-icons-round align-middle me-2">send</i>
-                            Send Message
-                        </button>
-                    </form>
+                    </div>
+                </div>
+
+                <div class="contact-button-wrapper">
+                    <button type="submit" class="contact-button">
+                        Send Message
+                    </button>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="custom-card p-4 mb-4">
-                    <h4 class="mb-4">Contact Information</h4>
-                    <div class="d-flex mb-4">
-                        <div class="card-icon me-3" style="width: 50px; height: 50px; font-size: 1.5rem;">
-                            <i class="material-icons-round">location_on</i>
-                        </div>
-                        <div>
-                            <h6 class="mb-1">Our Location</h6>
-                            <p class="text-muted mb-0">
-                                Bankhead Avenue, Sighthill<br>
-                                Edinburgh, EH11 4DE<br>
-                                Scotland
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <div class="card-icon me-3" style="width: 50px; height: 50px; font-size: 1.5rem;">
-                            <i class="material-icons-round">email</i>
-                        </div>
-                        <div>
-                            <h6 class="mb-1">Email Us</h6>
-                            <p class="text-muted mb-0">info@base-scotland.com</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="card-icon me-3" style="width: 50px; height: 50px; font-size: 1.5rem;">
-                            <i class="material-icons-round">phone</i>
-                        </div>
-                        <div>
-                            <h6 class="mb-1">Call Us</h6>
-                            <p class="text-muted mb-0">+44 (0) 131 XXX XXXX</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="custom-card p-4">
-                    <h5 class="mb-3">Office Hours</h5>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Monday - Friday:</span>
-                        <span class="fw-bold">9:00 AM - 5:00 PM</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Saturday:</span>
-                        <span class="fw-bold">10:00 AM - 2:00 PM</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Sunday:</span>
-                        <span class="fw-bold">Closed</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
 </section>
 

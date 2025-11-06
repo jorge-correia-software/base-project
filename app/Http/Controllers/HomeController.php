@@ -24,7 +24,8 @@ class HomeController extends Controller
 
         $activities = Activity::where('date', '>=', now())
             ->orderBy('date')
-            ->take(6)
+            ->orderBy('name')
+            ->take(3)
             ->get();
 
         $highlights = Highlight::orderBy('date', 'desc')

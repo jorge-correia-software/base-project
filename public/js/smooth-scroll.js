@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (backToTopButton) {
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
-                backToTopButton.style.display = 'block';
+                backToTopButton.classList.add('visible');
             } else {
-                backToTopButton.style.display = 'none';
+                backToTopButton.classList.remove('visible');
             }
         });
 
