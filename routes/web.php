@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 // Front-end routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/activities', [HomeController::class, 'activities'])->name('activities');
+Route::get('/support', [HomeController::class, 'support'])->name('support');
+Route::get('/highlights', [HomeController::class, 'highlights'])->name('highlights');
 
 // Contact form submission
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');

@@ -2438,6 +2438,243 @@ body {
 }
 
 /* ==========================================
+   SUPPORT PAGE
+   ========================================== */
+
+.support-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.support-page-header {
+    background-color: #f9fafb;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+}
+
+.support-page-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.support-page-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .support-page-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .support-page-title {
+        font-size: 3rem;
+    }
+}
+
+.support-page-description {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #4a5568;
+    text-align: center;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.support-empty {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.support-empty .material-icons-round {
+    font-size: 4rem;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+}
+
+.support-empty p {
+    font-size: 1.125rem;
+    color: #718096;
+}
+
+.support-pagination {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================
+   HIGHLIGHTS PAGE
+   ========================================== */
+
+.highlights-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.highlights-page-header {
+    background-color: #f9fafb;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+}
+
+.highlights-page-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.highlights-page-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .highlights-page-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .highlights-page-title {
+        font-size: 3rem;
+    }
+}
+
+.highlights-page-description {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #4a5568;
+    text-align: center;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlights-empty .material-icons-round {
+    font-size: 4rem;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+}
+
+.highlights-empty p {
+    font-size: 1.125rem;
+    color: #718096;
+}
+
+.highlights-pagination {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================
+   ACTIVITIES PAGE
+   ========================================== */
+
+.activities-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.activities-page-header {
+    background-color: #f9fafb;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+}
+
+.activities-page-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.activities-page-title {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .activities-page-title {
+        font-size: 2.5rem; /* 40px */
+    }
+}
+
+@media (min-width: 768px) {
+    .activities-page-title {
+        font-size: 3rem; /* 48px */
+    }
+}
+
+.activities-page-description {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #4a5568;
+    text-align: center;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.activities-empty {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.activities-empty .material-icons-round {
+    font-size: 4rem;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+}
+
+.activities-empty p {
+    font-size: 1.125rem;
+    color: #718096;
+}
+
+.activities-pagination {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================
    CONTACT SECTION
    ========================================== */
 
