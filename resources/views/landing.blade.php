@@ -296,11 +296,11 @@
         <div class="support-grid">
             @foreach($supportAreas as $area)
             <article class="support-card">
-                <img src="{{ asset($area->featured_image) }}" alt="{{ $area->title }}" class="support-card-image">
+                <img src="{{ asset($area->card_image) }}" alt="{{ $area->title }}" class="support-card-image">
                 <div class="support-card-gradient"></div>
                 <div class="support-card-ring"></div>
                 <h3 class="support-card-title">{{ $area->title }}</h3>
-                <p class="support-card-description">{{ $area->description }}</p>
+                <p class="support-card-description">{{ $area->short_description }}</p>
             </article>
             @endforeach
         </div>

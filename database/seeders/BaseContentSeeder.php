@@ -33,35 +33,41 @@ class BaseContentSeeder extends Seeder
             [
                 'title' => 'Financial Guidance',
                 'slug' => 'financial-guidance',
+                'short_description' => 'Expert advice on funding, investments, and financial planning for your business.',
                 'description' => 'Edinburgh College\'s BASE (Business Advice & Support for Entrepreneurs) offers expert guidance on funding, investment and financial planning for Scottish businesses. Our advisers help refine your proposition and connect you with the right finance partners.',
                 'content' => 'From seed funding to later-stage rounds, we tailor support to your goals: business plan development, financial modelling and forecasting, grant application support, investor materials, and cash-flow management. We\'ll also help you navigate the funding landscape—grants, loans and equity—so you choose the right route at the right time.',
                 'icon' => 'account_balance',
                 'featured_image' => '/images/support/financial-guidance.jpg',
+                'card_image' => '/images/support/homepage-versions/financial-guidance.jpg',
                 'order' => 1
             ],
             [
                 'title' => 'Marketing Strategy',
                 'slug' => 'marketing-strategy',
+                'short_description' => 'Develop effective marketing plans and digital presence to reach your target audience.',
                 'description' => 'Edinburgh College\'s BASE helps you develop effective marketing plans and a strong digital presence to reach the right audiences. We focus on building a clear brand identity and connecting with customers through modern, data-driven marketing.',
                 'content' => 'From brand positioning and messaging to digital strategy and social media planning, we provide end-to-end support to elevate your market presence. Our team guides you through content marketing, market research and analysis, customer segmentation and competitive positioning—showing you how to combine traditional and digital channels to maximise reach and ROI.',
                 'icon' => 'campaign',
                 'featured_image' => '/images/support/marketing-strategy.jpg',
+                'card_image' => '/images/support/homepage-versions/marketing-strategy.jpg',
                 'order' => 2
             ],
             [
                 'title' => 'Innovation Vouchers',
                 'slug' => 'innovation-vouchers',
+                'short_description' => 'This funding offers up to £7,500 on innovative projects.',
                 'description' => 'Edinburgh College\'s BASE helps businesses apply for Scottish Funding Council Innovation Vouchers—up to £7,500 to collaborate with academic staff on new products, processes or services. There\'s also the option to seek an Advanced Innovation Voucher for further support.',
                 'content' => 'BASE guides you through the application, matches you with the right academic expertise, and assists with project planning to maximise impact. Eligible applicants must be Scotland-based, registered companies with a clear need for academic input not readily available commercially. For more information, please email lewis.steen@edinburghcollege.ac.uk.',
                 'icon' => 'lightbulb',
                 'featured_image' => '/images/support/innovation-vouchers.jpg',
+                'card_image' => '/images/support/homepage-versions/innovation-vouchers.jpg',
                 'order' => 3
             ],
-            ['title' => 'Training & Development', 'slug' => 'training-development', 'description' => 'Professional development and skills training programs', 'icon' => 'school', 'order' => 4],
-            ['title' => 'Mentorship', 'slug' => 'mentorship', 'description' => 'One-on-one guidance from experienced business leaders', 'icon' => 'groups', 'order' => 5],
-            ['title' => 'Networking', 'slug' => 'networking', 'description' => 'Connect with partners, investors, and fellow entrepreneurs', 'icon' => 'network_check', 'order' => 6],
-            ['title' => 'Legal Support', 'slug' => 'legal-support', 'description' => 'Access to legal advice and business compliance guidance', 'icon' => 'gavel', 'order' => 7],
-            ['title' => 'Technology Solutions', 'slug' => 'technology-solutions', 'description' => 'IT infrastructure and software development support', 'icon' => 'developer_board', 'order' => 8],
+            ['title' => 'Training & Development', 'slug' => 'training-development', 'short_description' => 'Professional development and skills training programs', 'description' => 'Professional development and skills training programs', 'icon' => 'school', 'order' => 4],
+            ['title' => 'Mentorship', 'slug' => 'mentorship', 'short_description' => 'One-on-one guidance from experienced business leaders', 'description' => 'One-on-one guidance from experienced business leaders', 'icon' => 'groups', 'order' => 5],
+            ['title' => 'Networking', 'slug' => 'networking', 'short_description' => 'Connect with partners, investors, and fellow entrepreneurs', 'description' => 'Connect with partners, investors, and fellow entrepreneurs', 'icon' => 'network_check', 'order' => 6],
+            ['title' => 'Legal Support', 'slug' => 'legal-support', 'short_description' => 'Access to legal advice and business compliance guidance', 'description' => 'Access to legal advice and business compliance guidance', 'icon' => 'gavel', 'order' => 7],
+            ['title' => 'Technology Solutions', 'slug' => 'technology-solutions', 'short_description' => 'IT infrastructure and software development support', 'description' => 'IT infrastructure and software development support', 'icon' => 'developer_board', 'order' => 8],
         ];
 
         foreach ($supportAreas as $area) {

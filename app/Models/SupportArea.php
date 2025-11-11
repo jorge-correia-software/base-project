@@ -13,11 +13,13 @@ class SupportArea extends Model
     protected $fillable = [
         'title',
         'slug',
+        'short_description',
         'description',
         'content',
         'icon',
         'background_image_id',
         'featured_image',
+        'card_image',
         'is_active',
         'order',
     ];
