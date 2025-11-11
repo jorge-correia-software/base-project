@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/activities', [HomeController::class, 'activities'])->name('activities');
 Route::get('/activity/{activity}', [HomeController::class, 'show'])->name('activities.show');
+Route::post('/activity/register', [HomeController::class, 'register'])
+    ->name('activity.register')
+    ->middleware('throttle:5,60');
 Route::get('/support', [HomeController::class, 'support'])->name('support');
 Route::get('/highlights', [HomeController::class, 'highlights'])->name('highlights');
 

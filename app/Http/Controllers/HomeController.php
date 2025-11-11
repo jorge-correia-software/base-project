@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ActivityRegistrationSubmitted;
+use App\Mail\ActivityRegistrationReceived;
 use App\Models\Program;
 use App\Models\Post;
 use App\Models\Activity;
 use App\Models\Highlight;
 use App\Models\SupportArea;
+use App\Models\ContactSubmission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class HomeController extends Controller
@@ -131,5 +136,57 @@ class HomeController extends Controller
         ];
 
         return view('highlights', compact('highlights', 'seo'));
+    }
+
+    public function register(Request $request)
+    {
+        $validated = $request->validate([
+            'activity_id' => 'required|exists:activities,id',
+            'activity_name' => 'required|string',
+            'activity_date' => 'required|date',
+            'activity_time' => 'nullable|string',
+            'activity_location' => 'nullable|string',
+            'activity_price' => 'nullable|string',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+        ]);
+
+        // Create message with activity details and user info
+        $message = "Activity Registration:\n\n";
+        $message .= "Activity: {$validated['activity_name']}\n";
+        $message .= "Date: {$validated['activity_date']}\n";
+        $message .= "Time: " . ($validated['activity_time'] ?? 'N/A') . "\n";
+        $message .= "Location: " . ($validated['activity_location'] ?? 'N/A') . "\n";
+        $message .= "Price: {$validated['activity_price']}\n\n";
+        $message .= "Registrant Details:\n";
+        $message .= "Name: {$validated['name']}\n";
+        $message .= "Email: {$validated['email']}";
+
+        $submission = ContactSubmission::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'subject' => "Activity Registration: {$validated['activity_name']}",
+            'message' => $message,
+            'type' => 'registration',
+            'ip_address' => $request->ip(),
+        ]);
+
+        // Send emails synchronously
+        try {
+            // Admin notification
+            Mail::to(config('mail.admin_email', 'info@hub-base.co.uk'))
+                ->send(new ActivityRegistrationSubmitted($submission));
+
+            // Customer confirmation
+            Mail::to($validated['email'])
+                ->send(new ActivityRegistrationReceived($submission));
+
+            return redirect()->back()->with('success', 'Your registration has been confirmed! We\'ve sent you a confirmation email.');
+        } catch (\Exception $e) {
+            // Log error but still show success to user (submission was saved)
+            Log::error('Activity registration email failed: ' . $e->getMessage());
+
+            return redirect()->back()->with('success', 'Your registration has been submitted successfully! We will contact you shortly.');
+        }
     }
 }

@@ -3612,3 +3612,377 @@ textarea.contact-input {
     background-color: #f7fafc !important;
     color: #FF4D8D !important;
 }
+
+/* ========================================
+   HERO BANNER META INFO STYLES
+   ======================================== */
+
+/* Hero Meta Info (Date, Time, Location, Price) */
+.hero-meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hero-meta-item .material-icons-round {
+    font-size: 20px;
+    color: #FFD700; /* Yellow accent */
+}
+
+/* Hero Subtitle Spacing */
+.activities-page .hero-subtitle {
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   ACTIVITY DETAIL PAGE STYLES
+   ======================================== */
+
+/* Back to Activities Link */
+.activity-back-link-wrapper {
+    padding: 2rem 0 1.5rem;
+}
+
+.activity-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 300ms ease;
+}
+
+.activity-back-link:hover {
+    color: var(--brand-pink);
+    text-decoration: none;
+}
+
+.activity-back-link .material-icons-round {
+    font-size: 18px;
+}
+
+/* Single White Card Container */
+.activity-detail-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+/* Content Blocks */
+.activity-content-block {
+    margin-bottom: 2.5rem;
+}
+
+.activity-content-block:last-child {
+    margin-bottom: 0;
+}
+
+.activity-section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.activity-section-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #4a5568;
+}
+
+.activity-learning-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-learning-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.875rem;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #4a5568;
+}
+
+.activity-learning-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--brand-pink);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Activity Details Sidebar - Light Gray Background */
+.activity-details-sidebar {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    position: sticky;
+    top: 100px;
+}
+
+.activity-details-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+}
+
+.activity-details-list {
+    margin-bottom: 1.5rem;
+}
+
+.activity-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.activity-detail-item .material-icons-round {
+    color: var(--brand-pink);
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.activity-detail-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.activity-detail-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+/* Register Now Button */
+.btn-register-now {
+    width: 100%;
+    background-color: var(--brand-pink);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 300ms ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(232, 48, 104, 0.2);
+}
+
+.btn-register-now:hover {
+    background-color: rgba(232, 48, 104, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(232, 48, 104, 0.3);
+}
+
+.btn-register-now:active {
+    transform: translateY(0);
+}
+
+/* Simplified Related Activities Cards */
+.related-activity-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: all 300ms ease;
+}
+
+.related-activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.related-activity-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.related-activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease;
+}
+
+.related-activity-card:hover .related-activity-image img {
+    transform: scale(1.05);
+}
+
+.related-activity-body {
+    padding: 1.5rem;
+}
+
+.related-activity-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.related-company-badge {
+    display: inline-block;
+    background-color: var(--brand-pink);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.related-activity-date {
+    font-size: 0.875rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.related-activity-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Registration Modal Styling */
+#registrationModal .modal-content {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+#registrationModal .modal-header {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.5rem 2rem;
+}
+
+#registrationModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+#registrationModal .modal-body {
+    padding: 2rem;
+}
+
+#registrationModal .modal-footer {
+    border-top: 1px solid #e2e8f0;
+    padding: 1.5rem 2rem;
+}
+
+#registrationModal .form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+#registrationModal .form-control {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.95rem;
+    transition: all 200ms ease;
+}
+
+#registrationModal .form-control:focus {
+    border-color: var(--brand-pink);
+    box-shadow: 0 0 0 3px rgba(232, 48, 104, 0.1);
+    outline: none;
+}
+
+#registrationModal .form-control[readonly] {
+    background-color: #f7fafc;
+    color: #718096;
+}
+
+#registrationModal .btn-secondary {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: none;
+    border-radius: 8px;
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    transition: all 200ms ease;
+}
+
+#registrationModal .btn-secondary:hover {
+    background-color: #cbd5e0;
+    color: #2d3748;
+}
+
+#registrationModal .btn-primary {
+    background-color: var(--brand-pink);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    transition: all 200ms ease;
+}
+
+#registrationModal .btn-primary:hover {
+    background-color: rgba(232, 48, 104, 0.9);
+    transform: translateY(-1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .activity-details-sidebar {
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .activity-detail-card {
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .activity-detail-card {
+        padding: 1.5rem;
+    }
+
+    .activity-details-sidebar {
+        padding: 1.5rem;
+    }
+
+    .activity-section-heading {
+        font-size: 1.25rem;
+    }
+
+    #registrationModal .modal-body,
+    #registrationModal .modal-header,
+    #registrationModal .modal-footer {
+        padding: 1.5rem;
+    }
+}
