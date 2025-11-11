@@ -17,8 +17,8 @@
                     </div>
                     <span class="hero-badge-text">Expert Support</span>
                 </div>
-                <h1 class="hero-title">Comprehensive Business Support</h1>
-                <p class="hero-subtitle">Access expert guidance and resources across all key areas of your business to help you thrive, grow, and achieve your goals.</p>
+                <h1 class="hero-title">Comprehensive Business Support Services</h1>
+                <p class="hero-subtitle">From financial guidance to innovation vouchers, access expert support and resources tailored to help your business thrive at every stage of growth.</p>
             </div>
         </div>
     </div>
