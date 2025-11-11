@@ -94,8 +94,8 @@ class HomeController extends Controller
 
     public function show(Activity $activity)
     {
-        // Get related activities (same company, upcoming, exclude current)
-        $relatedActivities = Activity::where('company', $activity->company)
+        // Get related activities (same name, upcoming dates only, exclude current)
+        $relatedActivities = Activity::where('name', $activity->name)
             ->where('date', '>=', now())
             ->where('id', '!=', $activity->id)
             ->orderBy('date')
