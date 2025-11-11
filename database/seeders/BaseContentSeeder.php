@@ -150,7 +150,7 @@ class BaseContentSeeder extends Seeder
 
         // Create Settings
         $settings = [
-            ['key' => 'site_name', 'value' => 'BASE - Business Acceleration and Support Enterprise', 'type' => 'text', 'group' => 'general'],
+            ['key' => 'site_name', 'value' => 'BASE - Business Advice and Support for Entrepreneurs', 'type' => 'text', 'group' => 'general'],
             ['key' => 'site_tagline', 'value' => 'Empowering Business Growth in Scotland', 'type' => 'text', 'group' => 'general'],
             ['key' => 'contact_email', 'value' => 'info@base-scotland.com', 'type' => 'email', 'group' => 'contact'],
             ['key' => 'contact_phone', 'value' => '+44 (0) 131 XXX XXXX', 'type' => 'text', 'group' => 'contact'],

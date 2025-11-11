@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <h5 class="gradient-text-light mb-3">BASE</h5>
-                <p class="text-white-50">Business Acceleration and Support Enterprise</p>
+                <p class="text-white-50">Business Advice and Support for Entrepreneurs</p>
                 <p class="text-white-50 small">Empowering business growth across Scotland with comprehensive support, funding, and guidance.</p>
                 <div class="social-links mt-3">
                     <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>

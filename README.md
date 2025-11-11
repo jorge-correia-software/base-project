@@ -1,8 +1,8 @@
 # BASE CMS
 
-**Business Acceleration and Support Enterprise**
+**Business Advice and Support for Entrepreneurs**
 
-A Content Management System built with Laravel 12, designed for Edinburgh College's Business Advice Suppor Entrepreneurs (BASE) platform. Features a modern admin interface powered by Material Dashboard 3 with custom BASE branding (Pink #FF4D8D and Yellow #FFD700).
+A Content Management System built with Laravel 12, designed for Edinburgh College's Business Advice and Support for Entrepreneurs (BASE) platform. Features a modern admin interface powered by Material Dashboard 3 with custom BASE branding (Pink #FF4D8D and Yellow #FFD700).
 
 ---
 
@@ -350,7 +350,7 @@ This project is licensed under the MIT License.
 - **Laravel** - The PHP framework for web artisans
 - **Material Dashboard 3** - Beautiful admin UI framework by Creative Tim
 - **Bootstrap** - Front-end component library
-- **BASE Scotland** - Business Acceleration and Support Enterprise
+- **BASE Scotland** - Business Advice and Support for Entrepreneurs
 
 ---
 

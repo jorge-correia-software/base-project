@@ -34,7 +34,7 @@ class HomeController extends Controller
             ->get();
 
         $seo = [
-            'title' => 'BASE - Business Acceleration and Support Enterprise',
+            'title' => 'BASE - Business Advice and Support for Entrepreneurs',
             'description' => 'Empowering Business Growth in Scotland. Comprehensive support, funding opportunities, and expert guidance for Scottish businesses.',
             'keywords' => 'business support scotland, grants scotland, business funding, scottish startups, business acceleration',
         ];
@@ -42,12 +42,40 @@ class HomeController extends Controller
         return view('landing', compact('programs', 'posts', 'activities', 'highlights', 'seo'));
     }
 
-    public function activities()
+    public function activities(Request $request)
     {
-        $activities = Activity::where('date', '>=', now())
-            ->orderBy('date')
-            ->orderBy('name')
-            ->paginate(12);
+        $query = Activity::where('date', '>=', now());
+
+        // Search filter
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhere('company', 'like', "%{$search}%");
+            });
+        }
+
+        // Company filter
+        if ($request->filled('filter') && $request->input('filter') !== 'all') {
+            $company = $request->input('filter') === 'brt' ? 'BRT' : 'Elevator';
+            $query->where('company', $company);
+        }
+
+        // Sorting
+        $sortBy = $request->input('sort', 'date');
+        if ($sortBy === 'name') {
+            $query->orderBy('name');
+        } elseif ($sortBy === 'price') {
+            $query->orderByRaw("CASE WHEN price = 'Free' THEN 0 ELSE 1 END")
+                  ->orderByRaw("CAST(REPLACE(price, '£', '') AS UNSIGNED)");
+        } else {
+            $query->orderBy('date')->orderBy('name');
+        }
+
+        // Pagination
+        $perPage = $request->input('per_page', 6);
+        $activities = $query->paginate((int)$perPage)->appends($request->except('page'));
 
         $seo = [
             'title' => 'Activities - BASE Scotland',

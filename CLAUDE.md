@@ -6,6 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Please ask for clarification upfront, upon the initial prompts, when you need more direction.
 
+## Environment
+
+This project uses **Windows PowerShell** for development. All commands in this guide are formatted for PowerShell.
+
+- Use **Windows Terminal** or **PowerShell** (not WSL/Linux bash)
+- Claude Code runs natively in PowerShell without requiring WSL
+- All paths use Windows format (`C:\` instead of `/mnt/c/`)
+
 ## Documentation Reminders
 
 Use WebFetch or WebSearch to find relevant, up-to-date documentation when working with 3rd party libraries, packages, or frameworks. Key documentation sources:
@@ -19,18 +27,18 @@ Use WebFetch or WebSearch to find relevant, up-to-date documentation when workin
 
 ## Commands
 
-```bash
-composer install                                                        # Install dependencies
-/mnt/c/xampp/php/php.exe artisan serve --host=127.0.0.1 --port=8000     # Start development server
-/mnt/c/xampp/php/php.exe artisan migrate:fresh --seed                   # Reset database and seed data
-/mnt/c/xampp/php/php.exe artisan optimize:clear                         # Clear all caches
-/mnt/c/xampp/php/php.exe artisan test                                   # Run tests
-composer test                                                           # Run tests (shortcut)
+```powershell
+composer install                                                   # Install dependencies
+C:\xampp\php\php.exe artisan serve --host=127.0.0.1 --port=8000    # Start development server
+C:\xampp\php\php.exe artisan migrate:fresh --seed                  # Reset database and seed data
+C:\xampp\php\php.exe artisan optimize:clear                        # Clear all caches
+C:\xampp\php\php.exe artisan test                                  # Run tests
+composer test                                                      # Run tests (shortcut)
 ```
 
 ## Architecture Overview
 
-This is a BASE CMS (Business Acceleration and Support Enterprise) for the Scottish business accelerator platform, built with:
+This is a BASE CMS (Business Advice and Support for Entrepreneurs) for the Scottish business accelerator platform, built with:
 
 - **Laravel 12** with Eloquent ORM and RESTful routing
 - **PHP 8.2+** with type safety and modern PHP features
@@ -42,7 +50,7 @@ This is a BASE CMS (Business Acceleration and Support Enterprise) for the Scotti
 - **Polymorphic relationships** for Media uploads and SEO metadata
 - **Hierarchical structures** for Categories, Pages, and Menus
 - **Database-backed** sessions and queue system
-- **XAMPP** environment (Windows/WSL)
+- **XAMPP** environment (Windows PowerShell)
 
 ## Architecture
 
@@ -230,37 +238,37 @@ Admin controllers follow a consistent pattern:
 
 ## Common Development Tasks
 
-```bash
+```powershell
 # Route inspection
-/mnt/c/xampp/php/php.exe artisan route:list --except-vendor
-/mnt/c/xampp/php/php.exe artisan route:list --path=admin
+C:\xampp\php\php.exe artisan route:list --except-vendor
+C:\xampp\php\php.exe artisan route:list --path=admin
 
 # Generate files
-/mnt/c/xampp/php/php.exe artisan make:model ModelName -m
-/mnt/c/xampp/php/php.exe artisan make:controller Admin/ControllerName
-/mnt/c/xampp/php/php.exe artisan make:seeder SeederName
-/mnt/c/xampp/php/php.exe artisan make:migration create_table_name_table
+C:\xampp\php\php.exe artisan make:model ModelName -m
+C:\xampp\php\php.exe artisan make:controller Admin/ControllerName
+C:\xampp\php\php.exe artisan make:seeder SeederName
+C:\xampp\php\php.exe artisan make:migration create_table_name_table
 
 # Storage and utilities
-/mnt/c/xampp/php/php.exe artisan storage:link
-/mnt/c/xampp/php/php.exe artisan tinker
+C:\xampp\php\php.exe artisan storage:link
+C:\xampp\php\php.exe artisan tinker
 ```
 
 ## Code Quality
 
 After completing large additions or refactors, ensure code quality:
 
-```bash
+```powershell
 # Run tests
 composer test
 # Or directly:
-/mnt/c/xampp/php/php.exe artisan test
+C:\xampp\php\php.exe artisan test
 
 # Laravel Pint (code style fixer - PSR-12)
-/mnt/c/xampp/php/php.exe artisan pint
+C:\xampp\php\php.exe artisan pint
 
 # Check PHP syntax
-/mnt/c/xampp/php/php.exe -l path/to/file.php
+C:\xampp\php\php.exe -l path/to/file.php
 ```
 
 Ensure adherence to PSR-12 coding standards and Laravel best practices.
@@ -302,8 +310,9 @@ See `docs/REFURBISHMENT_PROGRESS.md` and `docs/IMPLEMENTATION_GUIDE.md` for deta
 
 ## Development Notes
 
-- **PHP Path:** `/mnt/c/xampp/php/php.exe` (WSL environment)
-- **Working Directory:** `/mnt/c/xampp/htdocs/base`
+- **Environment:** Windows PowerShell (use Windows Terminal for best experience)
+- **PHP Path:** `C:\xampp\php\php.exe`
+- **Working Directory:** `C:\xampp\htdocs\base`
 - **Repository:** https://github.com/jorge-correia-software/base-project (private)
 - **Previous System:** Multi-tenancy (Stancl/Tenancy) was removed during refurbishment
 

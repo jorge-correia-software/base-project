@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ $seo['description'] ?? 'BASE - Business Acceleration and Support Enterprise. Empowering Business Growth in Scotland.' }}">
+    <meta name="description" content="{{ $seo['description'] ?? 'BASE - Business Advice and Support for Entrepreneurs. Empowering Business Growth in Scotland.' }}">
     <meta name="keywords" content="{{ $seo['keywords'] ?? 'business support, scotland, grants, funding, business growth' }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- SEO -->
-    <title>{{ $seo['title'] ?? 'BASE - Business Acceleration and Support Enterprise' }}</title>
+    <title>{{ $seo['title'] ?? 'BASE - Business Advice and Support for Entrepreneurs' }}</title>
     <meta property="og:title" content="{{ $seo['og_title'] ?? $seo['title'] ?? 'BASE Scotland' }}">
     <meta property="og:description" content="{{ $seo['og_description'] ?? $seo['description'] ?? 'Empowering Business Growth in Scotland' }}">
     <meta property="og:image" content="{{ $seo['og_image'] ?? asset('img/og-image.jpg') }}">

@@ -86,7 +86,7 @@ class PageSeeder extends Seeder
 <p><strong>Last Updated:</strong> January 2025</p>
 
 <h3>1. Introduction</h3>
-<p>Business Acceleration and Support Enterprise (BASE) is committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your information when you use our website and services.</p>
+<p>Business Advice and Support for Entrepreneurs (BASE) is committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your information when you use our website and services.</p>
 
 <h3>2. Information We Collect</h3>
 <h4>2.1 Information You Provide</h4>
@@ -173,7 +173,7 @@ class PageSeeder extends Seeder
 <h3>12. Contact Us</h3>
 <p>For questions about this Privacy Policy or to exercise your rights, please contact us:</p>
 <p>
-    <strong>BASE - Business Acceleration and Support Enterprise</strong><br>
+    <strong>BASE - Business Advice and Support for Entrepreneurs</strong><br>
     Email: privacy@base.scot<br>
     Address: Bankhead Avenue, Sighthill, Edinburgh, EH11 4DE
 </p>
@@ -195,7 +195,7 @@ HTML;
 <p><strong>Last Updated:</strong> January 2025</p>
 
 <h3>1. Acceptance of Terms</h3>
-<p>By accessing and using the BASE (Business Acceleration and Support Enterprise) website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+<p>By accessing and using the BASE (Business Advice and Support for Entrepreneurs) website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
 
 <h3>2. About BASE</h3>
 <p>BASE is a Scottish business support organization providing programs, funding opportunities, and resources to help businesses grow and succeed. We are committed to fostering innovation and entrepreneurship across Scotland.</p>
@@ -286,7 +286,7 @@ HTML;
 <h3>12. Contact Information</h3>
 <p>For questions about these Terms of Service, please contact us:</p>
 <p>
-    <strong>BASE - Business Acceleration and Support Enterprise</strong><br>
+    <strong>BASE - Business Advice and Support for Entrepreneurs</strong><br>
     Email: info@base.scot<br>
     Address: Bankhead Avenue, Sighthill, Edinburgh, EH11 4DE<br>
     Phone: 0131 XXX XXXX
@@ -471,7 +471,7 @@ HTML;
 <h3>10. Contact Us</h3>
 <p>If you have questions about our use of cookies, please contact us:</p>
 <p>
-    <strong>BASE - Business Acceleration and Support Enterprise</strong><br>
+    <strong>BASE - Business Advice and Support for Entrepreneurs</strong><br>
     Email: privacy@base.scot<br>
     Address: Bankhead Avenue, Sighthill, Edinburgh, EH11 4DE
 </p>
@@ -487,7 +487,7 @@ HTML;
 <h3>General Questions</h3>
 
 <h4>What is BASE?</h4>
-<p>BASE (Business Acceleration and Support Enterprise) is Scotland's premier business support organization dedicated to fostering innovation, growth, and sustainability across all business sectors. We provide comprehensive support, funding opportunities, and expert guidance to help Scottish businesses thrive.</p>
+<p>BASE (Business Advice and Support for Entrepreneurs) is Scotland's premier business support organization dedicated to fostering innovation, growth, and sustainability across all business sectors. We provide comprehensive support, funding opportunities, and expert guidance to help Scottish businesses thrive.</p>
 
 <h4>Who can access BASE services?</h4>
 <p>BASE services are available to:</p>

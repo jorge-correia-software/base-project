@@ -1,5 +1,5 @@
 /*
- * BASE - Business Acceleration and Support Enterprise
+ * BASE - Business Advice and Support for Entrepreneurs
  * Custom Styles with Pink/Yellow Branding
  */
 
@@ -15,6 +15,31 @@
     --text-dark: #2d3748;
     --text-light: #718096;
     --bg-light: #f7fafc;
+}
+
+/* Custom Scrollbar - Slim, Dark & Pink */
+/* WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e83068;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff4d8d;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #e83068 #1a1a1a;
 }
 
 /* Global Styles */
@@ -3150,4 +3175,298 @@ textarea.contact-input {
 
 .back-to-top-button .material-icons-round {
     font-size: 1.5rem; /* 24px */
+}
+
+/* ===================================
+   ACTIVITIES PAGE - Hero Banner & Filters
+   =================================== */
+
+/* Page Background */
+.activities-page {
+    background-color: rgb(249, 250, 251);
+    min-height: 100vh;
+}
+
+/* Hero Banner */
+.activities-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+}
+
+.hero-banner-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-icon-wrapper .material-icons-round {
+    color: #FFD700;
+    font-size: 1.25rem;
+}
+
+.hero-badge-text {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.hero-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Filter Header */
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+}
+
+.filter-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+}
+
+.filter-toggle-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--brand-pink);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+}
+
+.filter-toggle-btn:hover {
+    background-color: #d1285a;
+    transform: scale(1.05);
+}
+
+.filter-toggle-btn .material-icons-round {
+    font-size: 1.25rem;
+}
+
+/* Filter Panel */
+.filter-panel {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-form {
+    width: 100%;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .filter-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+.filter-input,
+.filter-select {
+    padding: 0.625rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #2d3748;
+    transition: all 200ms ease;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    outline: none;
+    border-color: var(--brand-pink);
+    box-shadow: 0 0 0 3px rgba(232, 48, 104, 0.1);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-filter-apply {
+    padding: 0.625rem 1.5rem;
+    background-color: var(--brand-pink);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.btn-filter-apply:hover {
+    background-color: #d1285a;
+    transform: translateY(-1px);
+}
+
+.btn-filter-reset {
+    padding: 0.625rem 1.5rem;
+    background-color: #f7fafc;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 300ms ease;
+}
+
+.btn-filter-reset:hover {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+/* Custom Pagination Styling */
+.activities-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.activities-pagination nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.activities-pagination .pagination {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.activities-pagination .page-item {
+    display: inline-block;
+}
+
+.activities-pagination .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0.5rem 0.75rem;
+    background-color: white;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 300ms ease;
+}
+
+.activities-pagination .page-link:hover {
+    background-color: #f7fafc;
+    color: var(--brand-pink);
+    border-color: var(--brand-pink);
+}
+
+.activities-pagination .page-item.active .page-link {
+    background-color: var(--brand-pink);
+    color: white;
+    border-color: var(--brand-pink);
+}
+
+.activities-pagination .page-item.disabled .page-link {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
