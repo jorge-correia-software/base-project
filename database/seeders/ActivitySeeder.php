@@ -133,6 +133,17 @@ class ActivitySeeder extends Seeder
             ['Goal Setting', '2025-12-12', 'Elevator', '3-5pm', 'S809/10', 7],
             ['Planning for 2026', '2025-12-19', 'Elevator', '10am-12pm', 'S809/10', 8],
             ['Xmas Networking for Edinburgh', '2025-12-19', 'Elevator', '12:30-2:30pm', 'S809/10', 9],
+            ['Cashflow Made Easy', '2025-12-19', 'Elevator', '3-5pm', 'S809/10', 0],
+            // 2026 Activities
+            ['Cashflow Made Easy', '2026-01-16', 'Elevator', '10am-12pm', 'S809/10', 1],
+            ['Marketing Get Clients Now!', '2026-01-16', 'Elevator', '12:30-2:30pm', 'S809/10', 2],
+            ['Market Research Made Easy', '2026-01-16', 'Elevator', '3-5pm', 'S809/10', 3],
+            ['Cashflow Made Easy', '2026-02-20', 'Elevator', '10am-12pm', 'S809/10', 4],
+            ['Financial Planning Made Easy', '2026-02-20', 'Elevator', '12:30-2:30pm', 'S809/10', 5],
+            ['Marketing Get Clients Now!', '2026-02-20', 'Elevator', '3-5pm', 'S809/10', 6],
+            ['Cashflow Made Easy', '2026-03-20', 'Elevator', '10am-12pm', 'S809/10', 7],
+            ['Market Research Made Easy', '2026-03-20', 'Elevator', '12:30-2:30pm', 'S809/10', 8],
+            ['Show Me The Money', '2026-03-20', 'Elevator', '3-5pm', 'S809/10', 9],
         ];
 
         foreach ($activities as $activity) {
