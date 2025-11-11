@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="activities-page activity-detail-page">
+<section class="activities-page pb-6">
     {{-- Hero Banner (UNCHANGED) --}}
     <div class="activities-hero-banner">
         <img src="{{ $activity->image_url }}"

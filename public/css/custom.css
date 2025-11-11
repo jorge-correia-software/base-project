@@ -2722,8 +2722,9 @@ body {
     min-height: 100vh;
 }
 
-.activity-detail-page {
-    padding-bottom: 4rem;
+/* Extended Bootstrap spacing utilities */
+.pb-6 {
+    padding-bottom: 4rem !important;
 }
 
 .activities-page-header {
