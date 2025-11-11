@@ -3,10 +3,23 @@
 @section('content')
 
 <section class="support-page">
-    <div class="support-page-header">
-        <div class="support-page-container">
-            <h1 class="support-page-title">Business Support</h1>
-            <p class="support-page-description">Access expert guidance and resources across key business areas to help your company thrive and grow.</p>
+    {{-- Hero Banner --}}
+    <div class="activities-hero-banner support-hero-banner">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+             alt="Business professionals collaborating and receiving expert support"
+             class="hero-banner-image">
+        <div class="hero-banner-overlay"></div>
+        <div class="hero-banner-content">
+            <div class="activities-page-container">
+                <div class="hero-badge">
+                    <div class="hero-icon-wrapper">
+                        <i class="material-icons-round">handshake</i>
+                    </div>
+                    <span class="hero-badge-text">Expert Support</span>
+                </div>
+                <h1 class="hero-title">Comprehensive Business Support</h1>
+                <p class="hero-subtitle">Access expert guidance and resources across all key areas of your business to help you thrive, grow, and achieve your goals.</p>
+            </div>
         </div>
     </div>
 
