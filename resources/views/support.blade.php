@@ -23,30 +23,21 @@
         </div>
     </div>
 
-    <div class="support-page-container">
-        <div class="support-grid">
-            @forelse($supportAreas as $area)
-            <article class="support-card">
-                <img src="{{ $area->image_url }}" alt="{{ $area->title }}" class="support-card-image">
-                <div class="support-card-gradient"></div>
-                <div class="support-card-ring"></div>
-                <h3 class="support-card-title">{{ $area->title }}</h3>
-                <p class="support-card-description">{{ $area->description }}</p>
-            </article>
-            @empty
-            <div class="support-empty">
-                <i class="material-icons-round">support</i>
-                <p>No support areas available at the moment. Check back soon!</p>
+    {{-- Featured Support Sections --}}
+    @foreach($supportAreas as $index => $area)
+    <section class="support-feature-section {{ $index === 1 ? 'bg-gray' : '' }}">
+        <div class="support-feature-container {{ $index === 1 ? 'image-right' : '' }}">
+            <div class="support-feature-image">
+                <img src="{{ asset($area->featured_image) }}" alt="{{ $area->title }}">
             </div>
-            @endforelse
+            <div class="support-feature-content">
+                <h2 class="support-feature-title">{{ $area->title }}</h2>
+                <p class="support-feature-text">{{ $area->description }}</p>
+                <p class="support-feature-text">{{ $area->content }}</p>
+            </div>
         </div>
-
-        @if($supportAreas->hasPages())
-        <div class="support-pagination">
-            {{ $supportAreas->links() }}
-        </div>
-        @endif
-    </div>
+    </section>
+    @endforeach
 </section>
 
 @endsection

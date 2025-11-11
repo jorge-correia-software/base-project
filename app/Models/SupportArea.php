@@ -14,7 +14,10 @@ class SupportArea extends Model
         'title',
         'slug',
         'description',
+        'content',
+        'icon',
         'background_image_id',
+        'featured_image',
         'is_active',
         'order',
     ];

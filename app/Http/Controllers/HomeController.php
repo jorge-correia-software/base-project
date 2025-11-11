@@ -113,7 +113,10 @@ class HomeController extends Controller
 
     public function support()
     {
-        $supportAreas = SupportArea::paginate(12);
+        $supportAreas = SupportArea::where('is_active', true)
+            ->orderBy('order')
+            ->limit(3)
+            ->get();
 
         $seo = [
             'title' => 'BASE - Support',

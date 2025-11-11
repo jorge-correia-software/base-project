@@ -30,13 +30,37 @@ class BaseContentSeeder extends Seeder
 
         // Create Support Areas
         $supportAreas = [
-            ['title' => 'Funding & Grants', 'slug' => 'funding-grants', 'description' => 'Access to various funding opportunities and grant applications', 'icon' => 'account_balance', 'order' => 1],
-            ['title' => 'Training & Development', 'slug' => 'training-development', 'description' => 'Professional development and skills training programs', 'icon' => 'school', 'order' => 2],
-            ['title' => 'Mentorship', 'slug' => 'mentorship', 'description' => 'One-on-one guidance from experienced business leaders', 'icon' => 'groups', 'order' => 3],
-            ['title' => 'Networking', 'slug' => 'networking', 'description' => 'Connect with partners, investors, and fellow entrepreneurs', 'icon' => 'network_check', 'order' => 4],
-            ['title' => 'Legal Support', 'slug' => 'legal-support', 'description' => 'Access to legal advice and business compliance guidance', 'icon' => 'gavel', 'order' => 5],
-            ['title' => 'Marketing Strategy', 'slug' => 'marketing-strategy', 'description' => 'Expert guidance on marketing and brand development', 'icon' => 'campaign', 'order' => 6],
-            ['title' => 'Financial Planning', 'slug' => 'financial-planning', 'description' => 'Financial management and planning assistance', 'icon' => 'pie_chart', 'order' => 7],
+            [
+                'title' => 'Financial Guidance & Support',
+                'slug' => 'financial-guidance',
+                'description' => 'Securing the right funding is crucial to turning your business vision into reality. We provide expert guidance on funding options, from seed investment to later-stage growth capital, helping you navigate grants, loans, and equity financing.',
+                'content' => 'Our financial advisors work closely with you to develop robust financial plans, create investor-ready projections, and ensure your business maintains healthy cash flow. Whether you\'re seeking initial startup capital or scaling an established enterprise, we connect you with the right funding opportunities and support you through every stage of the application process.',
+                'icon' => 'account_balance',
+                'featured_image' => '/images/support/financial-guidance.jpg',
+                'order' => 1
+            ],
+            [
+                'title' => 'Marketing Strategy & Brand Development',
+                'slug' => 'marketing-strategy',
+                'description' => 'In today\'s competitive landscape, a strong marketing strategy is essential for business growth. Our marketing experts help you develop comprehensive strategies that resonate with your target audience, build brand awareness, and drive measurable results.',
+                'content' => 'From digital marketing and social media campaigns to traditional advertising and public relations, we provide the tools and expertise to position your brand effectively. We help you identify your unique value proposition, develop compelling messaging, and create integrated marketing campaigns that deliver ROI and sustainable growth.',
+                'icon' => 'campaign',
+                'featured_image' => '/images/support/marketing-strategy.jpg',
+                'order' => 2
+            ],
+            [
+                'title' => 'Innovation Vouchers & R&D Support',
+                'slug' => 'innovation-vouchers',
+                'description' => 'Innovation is at the heart of business growth. Through our Innovation Voucher scheme, Scottish SMEs can access up to £7,500 in funding to work with academic experts and research institutions, accelerating product development and technological advancement.',
+                'content' => 'We support businesses in identifying R&D opportunities, accessing innovation grants, and collaborating with universities and research centers. Whether you\'re developing new products, improving processes, or exploring cutting-edge technologies, our team provides the guidance and connections you need to stay ahead of the curve. Contact us at innovation@base-scotland.com to learn more about eligibility and application.',
+                'icon' => 'lightbulb',
+                'featured_image' => '/images/support/innovation-vouchers.jpg',
+                'order' => 3
+            ],
+            ['title' => 'Training & Development', 'slug' => 'training-development', 'description' => 'Professional development and skills training programs', 'icon' => 'school', 'order' => 4],
+            ['title' => 'Mentorship', 'slug' => 'mentorship', 'description' => 'One-on-one guidance from experienced business leaders', 'icon' => 'groups', 'order' => 5],
+            ['title' => 'Networking', 'slug' => 'networking', 'description' => 'Connect with partners, investors, and fellow entrepreneurs', 'icon' => 'network_check', 'order' => 6],
+            ['title' => 'Legal Support', 'slug' => 'legal-support', 'description' => 'Access to legal advice and business compliance guidance', 'icon' => 'gavel', 'order' => 7],
             ['title' => 'Technology Solutions', 'slug' => 'technology-solutions', 'description' => 'IT infrastructure and software development support', 'icon' => 'developer_board', 'order' => 8],
         ];
 
