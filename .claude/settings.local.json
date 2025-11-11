@@ -239,7 +239,13 @@
       "Bash(C:xamppmysqlbinmysql.exe -u root -h 127.0.0.1 -e \"CREATE DATABASE IF NOT EXISTS base_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\")",
       "Bash(C:xamppmysqlbinmysql.exe -u root -h 127.0.0.1 -e \"SHOW DATABASES LIKE ''base_db'';\")",
       "Bash(/mnt/c/xampp/mysql/bin/mysql.exe:*)",
-      "Bash(C:xamppphpphp.exe artisan tinker --execute=\"DB::statement(''CREATE DATABASE IF NOT EXISTS base_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci'');\")"
+      "Bash(C:xamppphpphp.exe artisan tinker --execute=\"DB::statement(''CREATE DATABASE IF NOT EXISTS base_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci'');\")",
+      "Bash(nc:*)",
+      "Bash(timeout 20 php artisan queue:work:*)",
+      "Bash(timeout 30 php artisan:*)",
+      "Bash(git reset:*)",
+      "Bash(C:xamppphpphp.exe artisan migrate:fresh --seed)",
+      "Bash(cmd.exe /c \"C:\\xampp\\php\\php.exe artisan migrate:fresh --seed\")"
     ],
     "deny": [],
     "ask": []

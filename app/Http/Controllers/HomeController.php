@@ -39,13 +39,18 @@ class HomeController extends Controller
             ->take(3)
             ->get();
 
+        $supportAreas = SupportArea::where('is_active', true)
+            ->orderBy('order')
+            ->limit(3)
+            ->get();
+
         $seo = [
             'title' => 'BASE - Business Advice and Support for Entrepreneurs',
             'description' => 'Empowering Business Growth in Scotland. Comprehensive support, funding opportunities, and expert guidance for Scottish businesses.',
             'keywords' => 'business support scotland, grants scotland, business funding, scottish startups, business acceleration',
         ];
 
-        return view('landing', compact('programs', 'posts', 'activities', 'highlights', 'seo'));
+        return view('landing', compact('programs', 'posts', 'activities', 'highlights', 'supportAreas', 'seo'));
     }
 
     public function activities(Request $request)

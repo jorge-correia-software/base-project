@@ -294,32 +294,15 @@
         </div>
 
         <div class="support-grid">
-            <!-- Financial Guidance -->
+            @foreach($supportAreas as $area)
             <article class="support-card">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1920&auto=format&fit=crop" alt="Financial Guidance" class="support-card-image">
+                <img src="{{ asset($area->featured_image) }}" alt="{{ $area->title }}" class="support-card-image">
                 <div class="support-card-gradient"></div>
                 <div class="support-card-ring"></div>
-                <h3 class="support-card-title">Financial Guidance</h3>
-                <p class="support-card-description">Expert advice on funding, investments, and financial planning for your business.</p>
+                <h3 class="support-card-title">{{ $area->title }}</h3>
+                <p class="support-card-description">{{ $area->description }}</p>
             </article>
-
-            <!-- Marketing Strategy -->
-            <article class="support-card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920&auto=format&fit=crop" alt="Marketing Strategy" class="support-card-image">
-                <div class="support-card-gradient"></div>
-                <div class="support-card-ring"></div>
-                <h3 class="support-card-title">Marketing Strategy</h3>
-                <p class="support-card-description">Develop effective marketing plans and digital presence to reach your target audience.</p>
-            </article>
-
-            <!-- Innovation Vouchers -->
-            <article class="support-card">
-                <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=1920&auto=format&fit=crop" alt="Innovation Vouchers" class="support-card-image">
-                <div class="support-card-gradient"></div>
-                <div class="support-card-ring"></div>
-                <h3 class="support-card-title">Innovation Vouchers</h3>
-                <p class="support-card-description">This funding offers up to £7,500 on innovative projects.</p>
-            </article>
+            @endforeach
         </div>
 
         <div class="support-button-container">

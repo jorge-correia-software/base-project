@@ -8,16 +8,16 @@ use Illuminate\Database\Seeder;
 class ActivitySeeder extends Seeder
 {
     private $activityImages = [
-        'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1496449903678-68ddcb189a24?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1920&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1920&auto=format&fit=crop',
+        '/images/activities/activity-1.jpg',
+        '/images/activities/activity-2.jpg',
+        '/images/activities/activity-3.jpg',
+        '/images/activities/activity-4.jpg',
+        '/images/activities/activity-5.jpg',
+        '/images/activities/activity-6.jpg',
+        '/images/activities/activity-7.jpg',
+        '/images/activities/activity-8.jpg',
+        '/images/activities/activity-9.jpg',
+        '/images/activities/activity-10.jpg',
     ];
 
     private function getImage($index)
