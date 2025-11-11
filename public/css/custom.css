@@ -2666,11 +2666,13 @@ body {
 .support-feature-image {
     flex: 1;
     max-width: 50%;
+    min-height: 500px;
 }
 
 .support-feature-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 500px;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     object-fit: cover;
