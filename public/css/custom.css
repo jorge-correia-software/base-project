@@ -2720,6 +2720,9 @@ body {
 .activities-page {
     background-color: #ffffff;
     min-height: 100vh;
+}
+
+.activity-detail-page {
     padding-bottom: 4rem;
 }
 
