@@ -115,4 +115,16 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Email Address
+    |--------------------------------------------------------------------------
+    |
+    | This is the email address that will receive notifications from the
+    | contact form and other admin-related emails.
+    |
+    */
+
+    'admin_email' => env('MAIL_ADMIN_EMAIL', 'info@base-scotland.com'),
+
 ];

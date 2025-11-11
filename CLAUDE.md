@@ -34,6 +34,61 @@ C:\xampp\php\php.exe artisan migrate:fresh --seed                  # Reset datab
 C:\xampp\php\php.exe artisan optimize:clear                        # Clear all caches
 C:\xampp\php\php.exe artisan test                                  # Run tests
 composer test                                                      # Run tests (shortcut)
+
+# Queue worker (process background jobs)
+C:\xampp\php\php.exe artisan queue:work                            # Run queue worker
+C:\xampp\php\php.exe artisan queue:work --stop-when-empty          # Process all jobs then stop
+```
+
+## Email & Queue System
+
+The application uses **Laravel Queues** for asynchronous email sending, providing better performance and user experience.
+
+### Configuration
+
+- **Queue Driver:** Database (`QUEUE_CONNECTION=database` in `.env`)
+- **Queue Table:** `jobs` table stores pending jobs
+- **Contact Form:** Sends 2 emails asynchronously (admin notification + customer confirmation)
+
+### Queue Worker
+
+The queue worker must be running to process queued jobs:
+
+```powershell
+# Development - process all jobs then stop
+C:\xampp\php\php.exe artisan queue:work --stop-when-empty
+
+# Production - keep worker running continuously
+C:\xampp\php\php.exe artisan queue:work --sleep=3 --tries=3
+```
+
+**Important:** For production, use a process manager like Supervisor or Laravel Horizon to keep the queue worker running.
+
+### Mailtrap Rate Limiting (Development Only)
+
+The contact form uses `->later(now()->addSeconds(10))` to delay the customer email by 10 seconds to avoid Mailtrap's free tier rate limits (1 email per 10 seconds).
+
+**For production SMTP:** Remove the delay by changing `->later()` back to `->queue()` in `ContactController.php`:
+
+```php
+// Remove delay for production SMTP (not Mailtrap)
+Mail::to($validated['email'])->queue(new ContactFormReceived($submission));
+```
+
+### Testing Queued Emails
+
+```powershell
+# Submit contact form, then process queue
+C:\xampp\php\php.exe artisan queue:work --stop-when-empty
+
+# Check queue status
+C:\xampp\php\php.exe artisan tinker --execute="echo DB::table('jobs')->count();"
+
+# View failed jobs
+C:\xampp\php\php.exe artisan queue:failed
+
+# Retry failed jobs
+C:\xampp\php\php.exe artisan queue:retry all
 ```
 
 ## Architecture Overview

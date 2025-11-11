@@ -377,27 +377,44 @@
         <!-- Right side - Form -->
         <form action="{{ route('contact.submit') }}" method="POST" class="contact-right">
             @csrf
+
+            {{-- Success Message --}}
+            @if(session('success'))
+                <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+                    <strong>✓ Success!</strong> {{ session('success') }}
+                </div>
+            @endif
+
             <div class="contact-form-inner">
                 <div class="contact-form-grid">
                     <div class="contact-form-field">
                         <label for="name" class="contact-label-text">Name</label>
                         <div class="contact-input-wrapper">
-                            <input type="text" name="name" id="name" autocomplete="name" class="contact-input" required>
+                            <input type="text" name="name" id="name" value="{{ old('name') }}" autocomplete="name" class="contact-input" required>
                         </div>
+                        @error('name')
+                            <span style="color: #dc3545; font-size: 14px; margin-top: 5px; display: block;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="contact-form-field">
                         <label for="email" class="contact-label-text">Email</label>
                         <div class="contact-input-wrapper">
-                            <input type="email" name="email" id="email" autocomplete="email" class="contact-input" required>
+                            <input type="email" name="email" id="email" value="{{ old('email') }}" autocomplete="email" class="contact-input" required>
                         </div>
+                        @error('email')
+                            <span style="color: #dc3545; font-size: 14px; margin-top: 5px; display: block;">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="contact-form-field">
                         <label for="message" class="contact-label-text">Message</label>
                         <div class="contact-input-wrapper">
-                            <textarea name="message" id="message" rows="4" class="contact-input" required></textarea>
+                            <textarea name="message" id="message" rows="4" class="contact-input" required>{{ old('message') }}</textarea>
                         </div>
+                        @error('message')
+                            <span style="color: #dc3545; font-size: 14px; margin-top: 5px; display: block;">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
 
