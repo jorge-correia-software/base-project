@@ -2720,6 +2720,7 @@ body {
 .activities-page {
     background-color: #ffffff;
     min-height: 100vh;
+    padding-bottom: 4rem;
 }
 
 .activities-page-header {
@@ -3804,6 +3805,19 @@ textarea.contact-input {
 }
 
 /* Simplified Related Activities Cards */
+.related-activities-section {
+}
+
+.related-activities-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.related-activities-section .activities-grid {
+    margin-top: 2.5rem;
+}
+
 .related-activity-card {
     background: white;
     border-radius: 16px;
