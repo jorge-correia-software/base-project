@@ -5,7 +5,7 @@
 <section class="support-page">
     {{-- Hero Banner --}}
     <div class="activities-hero-banner support-hero-banner">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2070&auto=format&fit=crop"
              alt="Business professionals collaborating and receiving expert support"
              class="hero-banner-image">
         <div class="hero-banner-overlay"></div>
@@ -32,8 +32,8 @@
             </div>
             <div class="support-feature-content">
                 <h2 class="support-feature-title">{{ $area->title }}</h2>
-                <p class="support-feature-text">{{ $area->description }}</p>
-                <p class="support-feature-text">{{ $area->content }}</p>
+                <p class="support-feature-text">{!! $area->description !!}</p>
+                <p class="support-feature-text">{!! $area->content !!}</p>
             </div>
         </div>
     </section>

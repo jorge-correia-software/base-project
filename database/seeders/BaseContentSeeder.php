@@ -54,8 +54,8 @@ class BaseContentSeeder extends Seeder
                 'title' => 'Innovation Vouchers',
                 'slug' => 'innovation-vouchers',
                 'short_description' => 'This funding offers up to £7,500 on innovative projects.',
-                'description' => 'Edinburgh College\'s BASE helps businesses apply for Scottish Funding Council Innovation Vouchers—up to £7,500 to collaborate with academic staff on new products, processes or services. There\'s also the option to seek an Advanced Innovation Voucher for further support.',
-                'content' => 'BASE guides you through the application, matches you with the right academic expertise, and assists with project planning to maximise impact. Eligible applicants must be Scotland-based, registered companies with a clear need for academic input not readily available commercially. For more information, please email lewis.steen@edinburghcollege.ac.uk.',
+                'description' => 'Edinburgh College\'s BASE helps businesses apply for Scottish Funding Council Innovation Vouchers—up to <strong>£7,500</strong> to collaborate with academic staff on new products, processes or services. There\'s also the option to seek an <strong>Advanced Innovation Voucher</strong> for further support.',
+                'content' => 'BASE guides you through the application, matches you with the right academic expertise, and assists with project planning to maximise impact. Eligible applicants must be Scotland-based, registered companies with a clear need for academic input not readily available commercially. For more information, please email <strong>lewis.steen@edinburghcollege.ac.uk</strong>.',
                 'icon' => 'lightbulb',
                 'featured_image' => '/images/support/innovation-vouchers.jpg',
                 'order' => 3

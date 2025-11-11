@@ -245,7 +245,8 @@
       "Bash(timeout 30 php artisan:*)",
       "Bash(git reset:*)",
       "Bash(C:xamppphpphp.exe artisan migrate:fresh --seed)",
-      "Bash(cmd.exe /c \"C:\\xampp\\php\\php.exe artisan migrate:fresh --seed\")"
+      "Bash(cmd.exe /c \"C:\\xampp\\php\\php.exe artisan migrate:fresh --seed\")",
+      "Bash(C:/xampp/php/php.exe artisan migrate:fresh --seed)"
     ],
     "deny": [],
     "ask": []
