@@ -19,7 +19,6 @@ class SupportArea extends Model
         'icon',
         'background_image_id',
         'featured_image',
-        'card_image',
         'is_active',
         'order',
     ];

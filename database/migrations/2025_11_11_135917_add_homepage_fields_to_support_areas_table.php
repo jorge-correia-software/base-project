@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::table('support_areas', function (Blueprint $table) {
             $table->string('short_description')->nullable()->after('slug');
-            $table->string('card_image')->nullable()->after('featured_image');
         });
     }
 
@@ -23,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('support_areas', function (Blueprint $table) {
-            $table->dropColumn(['short_description', 'card_image']);
+            $table->dropColumn('short_description');
         });
     }
 };

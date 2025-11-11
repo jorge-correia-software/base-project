@@ -38,7 +38,6 @@ class BaseContentSeeder extends Seeder
                 'content' => 'From seed funding to later-stage rounds, we tailor support to your goals: business plan development, financial modelling and forecasting, grant application support, investor materials, and cash-flow management. We\'ll also help you navigate the funding landscape—grants, loans and equity—so you choose the right route at the right time.',
                 'icon' => 'account_balance',
                 'featured_image' => '/images/support/financial-guidance.jpg',
-                'card_image' => '/images/support/homepage-versions/financial-guidance.jpg',
                 'order' => 1
             ],
             [
@@ -49,7 +48,6 @@ class BaseContentSeeder extends Seeder
                 'content' => 'From brand positioning and messaging to digital strategy and social media planning, we provide end-to-end support to elevate your market presence. Our team guides you through content marketing, market research and analysis, customer segmentation and competitive positioning—showing you how to combine traditional and digital channels to maximise reach and ROI.',
                 'icon' => 'campaign',
                 'featured_image' => '/images/support/marketing-strategy.jpg',
-                'card_image' => '/images/support/homepage-versions/marketing-strategy.jpg',
                 'order' => 2
             ],
             [
@@ -60,7 +58,6 @@ class BaseContentSeeder extends Seeder
                 'content' => 'BASE guides you through the application, matches you with the right academic expertise, and assists with project planning to maximise impact. Eligible applicants must be Scotland-based, registered companies with a clear need for academic input not readily available commercially. For more information, please email lewis.steen@edinburghcollege.ac.uk.',
                 'icon' => 'lightbulb',
                 'featured_image' => '/images/support/innovation-vouchers.jpg',
-                'card_image' => '/images/support/homepage-versions/innovation-vouchers.jpg',
                 'order' => 3
             ],
             ['title' => 'Training & Development', 'slug' => 'training-development', 'short_description' => 'Professional development and skills training programs', 'description' => 'Professional development and skills training programs', 'icon' => 'school', 'order' => 4],
