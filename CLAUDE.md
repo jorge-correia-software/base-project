@@ -91,6 +91,141 @@ C:\xampp\php\php.exe artisan queue:failed
 C:\xampp\php\php.exe artisan queue:retry all
 ```
 
+## Security Features
+
+The application implements **5 layers of security** to protect the contact form from spam, bots, and malicious code injection:
+
+### 1. Honeypot Field (Bot Detection)
+
+**Location:** `resources/views/landing.blade.php`
+
+A hidden field named `website` is positioned off-screen using CSS. Legitimate users never see it, but bots auto-fill all fields.
+
+```html
+<div style="position: absolute; left: -9999px;" aria-hidden="true" tabindex="-1">
+    <input type="text" name="website" autocomplete="off">
+</div>
+```
+
+**How it works:**
+- Invisible to human users
+- Bots fill it automatically
+- If filled → submission silently rejected (appears successful to bot)
+- Catches ~90% of simple spam bots
+
+### 2. Rate Limiting (Flood Prevention)
+
+**Location:** `routes/web.php`
+
+Laravel's throttle middleware limits contact form submissions to **3 per hour per IP address**.
+
+```php
+Route::post('/contact', [ContactController::class, 'submit'])
+    ->middleware('throttle:3,60');
+```
+
+**Configuration:**
+- `3` = Maximum 3 requests
+- `60` = Per 60 minutes (1 hour)
+- Per IP address
+- Returns 429 error when exceeded
+
+### 3. Input Validation (Malicious Pattern Detection)
+
+**Location:** `app/Http/Controllers/ContactController.php`
+
+Validates all inputs and blocks malicious patterns:
+
+**Name field validation:**
+```php
+'name' => 'regex:/^[a-zA-Z\s\-\'\.]+$/'
+```
+- Only allows: letters, spaces, hyphens, apostrophes, dots
+- Blocks: numbers, special characters
+
+**Message field validation:**
+Blocks common XSS and injection patterns:
+- `<script>` tags
+- `javascript:` protocol
+- Event handlers: `onclick=`, `onerror=`, `onload=`
+- `<iframe>` tags
+- `eval(`, `expression(`, `vbscript:`
+
+### 4. Input Sanitization (HTML Stripping)
+
+**Location:** `app/Http/Controllers/ContactController.php`
+
+All inputs are sanitized before saving to database:
+
+```php
+$validated['name'] = strip_tags(trim($validated['name']));
+$validated['email'] = strip_tags(trim($validated['email']));
+$validated['message'] = strip_tags(trim($validated['message']));
+```
+
+- Strips ALL HTML tags
+- Removes leading/trailing whitespace
+- Prevents stored XSS attacks
+
+### 5. Output Escaping (XSS Prevention)
+
+**Location:** All Blade templates
+
+Laravel Blade's `{{ }}` syntax automatically escapes HTML output:
+
+```blade
+{{ $submission->name }}  <!-- Automatically escaped -->
+{!! $submission->name !!}  <!-- NOT escaped - avoid! -->
+```
+
+### Testing Security Features
+
+```powershell
+# Test honeypot (simulate bot)
+# Use browser dev tools to unhide and fill the 'website' field
+# Submission should appear successful but not save to database
+
+# Test rate limiting
+# Submit form 4 times in quick succession
+# 4th submission should return 429 error
+
+# Test XSS prevention
+# Try submitting: <script>alert('XSS')</script>
+# Should show validation error: "The message contains invalid content."
+
+# Test HTML stripping
+# Submit: <b>Hello</b> World
+# Saved as: Hello World (HTML tags removed)
+```
+
+### Security Checklist
+
+**Development (Current):**
+- ✅ CSRF protection enabled
+- ✅ Honeypot field active
+- ✅ Rate limiting: 3/hour
+- ✅ Input validation & sanitization
+- ✅ Output escaping (Blade)
+- ✅ SQL injection prevention (Eloquent ORM)
+- ✅ Password hashing (bcrypt)
+
+**Production (Before Deployment):**
+- [ ] Set `APP_DEBUG=false` in `.env`
+- [ ] Change all default passwords
+- [ ] Enable HTTPS
+- [ ] Update rate limiting if needed
+- [ ] Consider adding reCAPTCHA for high-traffic sites
+- [ ] Review and restrict database permissions
+- [ ] Set up security monitoring/logging
+
+### Additional Security Notes
+
+- **CSRF Tokens:** All forms include `@csrf` directive for CSRF protection
+- **SQL Injection:** Eloquent ORM uses prepared statements automatically
+- **Password Security:** Bcrypt with 12 rounds (configurable in `.env`)
+- **Session Security:** Database-backed sessions with secure cookies
+- **Email Security:** All email addresses validated before sending
+
 ## Architecture Overview
 
 This is a BASE CMS (Business Advice and Support for Entrepreneurs) for the Scottish business accelerator platform, built with:

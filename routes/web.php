@@ -22,8 +22,10 @@ Route::get('/activities', [HomeController::class, 'activities'])->name('activiti
 Route::get('/support', [HomeController::class, 'support'])->name('support');
 Route::get('/highlights', [HomeController::class, 'highlights'])->name('highlights');
 
-// Contact form submission
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+// Contact form submission (rate limited: 3 submissions per hour per IP)
+Route::post('/contact', [ContactController::class, 'submit'])
+    ->name('contact.submit')
+    ->middleware('throttle:3,60');
 
 // Blog/Posts Routes
 Route::get('/blog', [PostController::class, 'index'])->name('posts.index');

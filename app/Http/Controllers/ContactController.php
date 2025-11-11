@@ -13,11 +13,48 @@ class ContactController extends Controller
 {
     public function submit(Request $request)
     {
+        // Honeypot check - silently reject bot submissions
+        if ($request->filled('website')) {
+            // Bot filled the honeypot field - pretend success but don't save/email
+            return redirect('/#contact')->with('success', 'Thank you for contacting us! We will get back to you soon.');
+        }
+
         $validated = $request->validate([
-            'name' => 'required|max:255',
+            'name' => [
+                'required',
+                'max:255',
+                'regex:/^[a-zA-Z\s\-\'\.]+$/', // Only letters, spaces, hyphens, apostrophes, dots
+            ],
             'email' => 'required|email|max:255',
-            'message' => 'required',
+            'message' => [
+                'required',
+                'max:5000',
+                function ($attribute, $value, $fail) {
+                    // Block common XSS and injection patterns
+                    $malicious_patterns = [
+                        '/<script/i',
+                        '/javascript:/i',
+                        '/on\w+\s*=/i', // onclick, onerror, onload, etc.
+                        '/<iframe/i',
+                        '/eval\(/i',
+                        '/expression\(/i',
+                        '/vbscript:/i',
+                    ];
+
+                    foreach ($malicious_patterns as $pattern) {
+                        if (preg_match($pattern, $value)) {
+                            $fail('The message contains invalid content.');
+                        }
+                    }
+                },
+            ],
+            'website' => 'nullable', // Honeypot field (should be empty)
         ]);
+
+        // Sanitize inputs - strip HTML tags and trim whitespace
+        $validated['name'] = strip_tags(trim($validated['name']));
+        $validated['email'] = strip_tags(trim($validated['email']));
+        $validated['message'] = strip_tags(trim($validated['message']));
 
         // Auto-generate subject for database storage
         $validated['subject'] = 'Contact Form Enquiry';

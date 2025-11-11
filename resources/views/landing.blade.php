@@ -407,6 +407,12 @@
                         @enderror
                     </div>
 
+                    {{-- Honeypot field - Hidden from users, visible to bots --}}
+                    <div class="contact-form-field" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true" tabindex="-1">
+                        <label for="website">Website</label>
+                        <input type="text" name="website" id="website" value="{{ old('website') }}" autocomplete="off" tabindex="-1">
+                    </div>
+
                     <div class="contact-form-field">
                         <label for="message" class="contact-label-text">Message</label>
                         <div class="contact-input-wrapper">
