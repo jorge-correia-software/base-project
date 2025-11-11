@@ -18,7 +18,7 @@
                     <span class="hero-badge-text">Explore & Learn</span>
                 </div>
                 <h1 class="hero-title">Discover Our Full Range of Business Activities</h1>
-                <p class="hero-subtitle">From financial workshops to marketing masterclasses, find the perfect opportunity to accelerate your business growth and connect with industry experts.</p>
+                <p class="hero-subtitle">From financial workshops to marketing masterclasses, find the perfect opportunity to grow your business skills and network with industry experts.</p>
             </div>
         </div>
     </div>

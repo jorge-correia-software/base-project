@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
     const allScrollLinks = document.querySelectorAll('[data-scroll-to]');
 
+    // Detect if we're on homepage
+    const isHomepage = navbar ? navbar.classList.contains('navbar-other-page') === false : true;
+
     // Track scroll state
     let isScrolled = false;
 
@@ -40,8 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Active section highlighting
+    // Active section highlighting (only on homepage)
     function highlightActiveSection() {
+        // Skip if not on homepage
+        if (!isHomepage) return;
+
         const scrollPosition = window.scrollY + (navbar ? navbar.offsetHeight : 0) + 100;
         let activeFound = false;
 
@@ -163,13 +169,22 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     }
 
-    // Handle all scroll-to links (desktop and mobile)
-    allScrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('data-scroll-to');
-            smoothScrollTo(targetId);
-            closeMobileMenu();
+    // Handle all scroll-to links (desktop and mobile) - only on homepage
+    if (isHomepage) {
+        allScrollLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-scroll-to');
+                smoothScrollTo(targetId);
+                closeMobileMenu();
+            });
         });
-    });
+    } else {
+        // On other pages, just close mobile menu when links are clicked
+        allScrollLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+    }
 });

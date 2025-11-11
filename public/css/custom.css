@@ -186,6 +186,40 @@ body {
     color: var(--brand-yellow);
 }
 
+/* Navbar on other pages (Activities, Support, Highlights) - White text always */
+.navbar-other-page .nav-link {
+    color: white !important;
+}
+
+.navbar-other-page .nav-link:hover {
+    color: var(--brand-yellow) !important;
+}
+
+.navbar-other-page .nav-link.active {
+    color: var(--brand-pink) !important; /* Pink for transparent state */
+    font-weight: 700;
+}
+
+.navbar-other-page.scrolled .nav-link {
+    color: white !important;
+}
+
+.navbar-other-page.scrolled .nav-link:hover {
+    color: var(--brand-yellow) !important;
+}
+
+.navbar-other-page.scrolled .nav-link.active {
+    color: var(--brand-yellow) !important; /* Yellow when scrolled */
+}
+
+.navbar-other-page .mobile-menu-button svg {
+    color: white !important;
+}
+
+.navbar-other-page .btn-get-started {
+    color: #000000 !important; /* Keep Get Started button text black */
+}
+
 /* Mobile menu button - Hamburger */
 .mobile-menu-button {
     background-color: #f1e73c; /* Yellow background */
@@ -3262,7 +3296,7 @@ textarea.contact-input {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     z-index: 10;
 }
 
@@ -3296,7 +3330,7 @@ textarea.contact-input {
 
 .hero-title {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -3305,7 +3339,7 @@ textarea.contact-input {
 
 @media (min-width: 768px) {
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
@@ -3314,7 +3348,7 @@ textarea.contact-input {
     font-size: 1.125rem;
     line-height: 1.6;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 /* Filter Header */
