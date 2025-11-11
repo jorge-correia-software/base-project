@@ -872,6 +872,26 @@ body {
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)); /* from-transparent to-black/60 */
 }
 
+/* Price Pill */
+.activity-price-pill {
+    position: absolute;
+    top: 1rem; /* 16px */
+    right: 1rem; /* 16px */
+    z-index: 10;
+    background-color: #ffffff;
+    color: #1a202c; /* text-gray-900 */
+    font-size: 0.875rem; /* text-sm = 14px */
+    font-weight: 600; /* font-semibold */
+    padding: 0.25rem 0.75rem; /* py-1 px-3 = 4px 12px - slimmer */
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    transition: all 300ms ease;
+}
+
+.activity-card:hover .activity-price-pill {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
+}
+
 /* Card Body */
 .activity-card-body {
     position: relative;
@@ -978,6 +998,34 @@ body {
         padding-top: 1.5rem; /* sm:py-6 = 24px */
         padding-bottom: 1.5rem;
     }
+}
+
+/* Body Meta (Time & Location in card body) */
+.activity-body-meta {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: flex-start; /* Align to left */
+    gap: 0.5rem; /* gap-2 = 8px - smaller gap for stacked items */
+    margin-top: 1rem; /* mt-4 = 16px */
+}
+
+/* Meta Item (Time & Location) */
+.activity-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 = 8px */
+    font-size: 0.875rem; /* text-sm = 14px */
+    color: #4a5568; /* text-gray-700 */
+}
+
+.activity-meta-item .material-icons-round {
+    font-size: 1.125rem; /* 18px */
+    color: #e83068; /* text-brand-pink */
+}
+
+.activity-meta-item span {
+    font-weight: 500; /* font-medium */
+    line-height: 1.5;
 }
 
 /* Footer Content */
@@ -3205,7 +3253,7 @@ textarea.contact-input {
 .hero-banner-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6));
 }
 
 .hero-banner-content {
@@ -3469,4 +3517,50 @@ textarea.contact-input {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+}
+
+/* Bootstrap 5 Pagination Styling */
+
+/* Hide prev/next chevron buttons */
+.activities-pagination .page-item:first-child,
+.activities-pagination .page-item:last-child {
+    display: none;
+}
+
+/* Style all page links */
+.activities-pagination .page-link {
+    background-color: white !important;
+    color: #4a5568 !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    width: 44px;
+    height: 44px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 300ms ease;
+    padding: 0 !important;
+}
+
+/* Style active page - SOLID PINK, NO GRADIENT */
+.activities-pagination .page-item.active .page-link {
+    background-color: #FF4D8D !important;
+    background-image: none !important; /* Remove gradient */
+    color: white !important;
+    border: none !important;
+    font-weight: 600;
+}
+
+/* Override Material Dashboard gradient class */
+.activities-pagination .bg-gradient-primary {
+    background-image: none !important;
+    background-color: #FF4D8D !important;
+}
+
+/* Hover effect on inactive pages */
+.activities-pagination .page-item:not(.active) .page-link:hover {
+    background-color: #f7fafc !important;
+    color: #FF4D8D !important;
 }

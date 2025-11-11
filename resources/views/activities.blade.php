@@ -92,6 +92,15 @@
                 <div class="activity-card-image">
                     <img src="{{ $activity->image_url }}" alt="{{ $activity->name }}">
                     <div class="activity-card-image-overlay"></div>
+
+                    {{-- Price Pill --}}
+                    <div class="activity-price-pill">
+                        @if($activity->price && strtolower($activity->price) !== 'free')
+                            {{ $activity->price }}
+                        @else
+                            Free
+                        @endif
+                    </div>
                 </div>
                 <div class="activity-card-body">
                     <div class="activity-card-meta">
@@ -101,6 +110,23 @@
                     <div class="activity-card-content">
                         <h3 class="activity-card-title">{{ $activity->name }}</h3>
                         <p class="activity-card-description">{{ Str::limit($activity->description, 100) }}</p>
+                    </div>
+
+                    {{-- Time and Location Meta --}}
+                    <div class="activity-body-meta">
+                        @if($activity->duration)
+                        <div class="activity-meta-item">
+                            <i class="material-icons-round">schedule</i>
+                            <span>{{ $activity->duration }}</span>
+                        </div>
+                        @endif
+
+                        @if($activity->location)
+                        <div class="activity-meta-item">
+                            <i class="material-icons-round">location_on</i>
+                            <span>{{ $activity->location }}</span>
+                        </div>
+                        @endif
                     </div>
                 </div>
                 <div class="activity-card-footer">
@@ -143,7 +169,7 @@
         {{-- Pagination --}}
         @if($activities->hasPages())
         <div class="activities-pagination">
-            {{ $activities->links() }}
+            {{ $activities->links('pagination::bootstrap-5') }}
         </div>
         @endif
     </div>
