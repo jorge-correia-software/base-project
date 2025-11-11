@@ -31,28 +31,28 @@ class BaseContentSeeder extends Seeder
         // Create Support Areas
         $supportAreas = [
             [
-                'title' => 'Financial Guidance & Support',
+                'title' => 'Financial Guidance',
                 'slug' => 'financial-guidance',
-                'description' => 'Securing the right funding is crucial to turning your business vision into reality. We provide expert guidance on funding options, from seed investment to later-stage growth capital, helping you navigate grants, loans, and equity financing.',
-                'content' => 'Our financial advisors work closely with you to develop robust financial plans, create investor-ready projections, and ensure your business maintains healthy cash flow. Whether you\'re seeking initial startup capital or scaling an established enterprise, we connect you with the right funding opportunities and support you through every stage of the application process.',
+                'description' => 'Edinburgh College\'s BASE (Business Advice & Support for Entrepreneurs) offers expert guidance on funding, investment and financial planning for Scottish businesses. Our advisers help refine your proposition and connect you with the right finance partners.',
+                'content' => 'From seed funding to later-stage rounds, we tailor support to your goals: business plan development, financial modelling and forecasting, grant application support, investor materials, and cash-flow management. We\'ll also help you navigate the funding landscape—grants, loans and equity—so you choose the right route at the right time.',
                 'icon' => 'account_balance',
                 'featured_image' => '/images/support/financial-guidance.jpg',
                 'order' => 1
             ],
             [
-                'title' => 'Marketing Strategy & Brand Development',
+                'title' => 'Marketing Strategy',
                 'slug' => 'marketing-strategy',
-                'description' => 'In today\'s competitive landscape, a strong marketing strategy is essential for business growth. Our marketing experts help you develop comprehensive strategies that resonate with your target audience, build brand awareness, and drive measurable results.',
-                'content' => 'From digital marketing and social media campaigns to traditional advertising and public relations, we provide the tools and expertise to position your brand effectively. We help you identify your unique value proposition, develop compelling messaging, and create integrated marketing campaigns that deliver ROI and sustainable growth.',
+                'description' => 'Edinburgh College\'s BASE helps you develop effective marketing plans and a strong digital presence to reach the right audiences. We focus on building a clear brand identity and connecting with customers through modern, data-driven marketing.',
+                'content' => 'From brand positioning and messaging to digital strategy and social media planning, we provide end-to-end support to elevate your market presence. Our team guides you through content marketing, market research and analysis, customer segmentation and competitive positioning—showing you how to combine traditional and digital channels to maximise reach and ROI.',
                 'icon' => 'campaign',
                 'featured_image' => '/images/support/marketing-strategy.jpg',
                 'order' => 2
             ],
             [
-                'title' => 'Innovation Vouchers & R&D Support',
+                'title' => 'Innovation Vouchers',
                 'slug' => 'innovation-vouchers',
-                'description' => 'Innovation is at the heart of business growth. Through our Innovation Voucher scheme, Scottish SMEs can access up to £7,500 in funding to work with academic experts and research institutions, accelerating product development and technological advancement.',
-                'content' => 'We support businesses in identifying R&D opportunities, accessing innovation grants, and collaborating with universities and research centers. Whether you\'re developing new products, improving processes, or exploring cutting-edge technologies, our team provides the guidance and connections you need to stay ahead of the curve. Contact us at innovation@base-scotland.com to learn more about eligibility and application.',
+                'description' => 'Edinburgh College\'s BASE helps businesses apply for Scottish Funding Council Innovation Vouchers—up to £7,500 to collaborate with academic staff on new products, processes or services. There\'s also the option to seek an Advanced Innovation Voucher for further support.',
+                'content' => 'BASE guides you through the application, matches you with the right academic expertise, and assists with project planning to maximise impact. Eligible applicants must be Scotland-based, registered companies with a clear need for academic input not readily available commercially. For more information, please email lewis.steen@edinburghcollege.ac.uk.',
                 'icon' => 'lightbulb',
                 'featured_image' => '/images/support/innovation-vouchers.jpg',
                 'order' => 3
