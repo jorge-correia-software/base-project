@@ -89,6 +89,7 @@
         <div class="activities-grid">
             @forelse($activities as $activity)
             <article class="activity-card">
+                <a href="{{ route('activities.show', $activity->id) }}" class="activity-card-link">
                 <div class="activity-card-image">
                     <img src="{{ $activity->image_url }}" alt="{{ $activity->name }}">
                     <div class="activity-card-image-overlay"></div>
@@ -136,7 +137,7 @@
                                 $iconMap = [
                                     'Briefcase' => 'work',
                                     'Rocket' => 'rocket_launch',
-                                    'DollarSign' => 'attach_money',
+                                    'DollarSign' => 'currency_pound',
                                     'Users' => 'people',
                                     'Target' => 'track_changes',
                                     'PenTool' => 'edit',
@@ -157,6 +158,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </article>
             @empty
             <div class="activities-empty">

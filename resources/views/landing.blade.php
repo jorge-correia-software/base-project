@@ -195,9 +195,19 @@
         <div class="activities-grid">
             @forelse($activities ?? [] as $activity)
             <article class="activity-card">
+                <a href="{{ route('activities.show', $activity->id) }}" class="activity-card-link">
                 <div class="activity-card-image">
                     <img src="{{ $activity->image_url }}" alt="{{ $activity->name }}">
                     <div class="activity-card-image-overlay"></div>
+
+                    {{-- Price Pill --}}
+                    <div class="activity-price-pill">
+                        @if($activity->price && strtolower($activity->price) !== 'free')
+                            {{ $activity->price }}
+                        @else
+                            Free
+                        @endif
+                    </div>
                 </div>
                 <div class="activity-card-body">
                     <div class="activity-card-meta">
@@ -208,6 +218,23 @@
                         <h3 class="activity-card-title">{{ $activity->name }}</h3>
                         <p class="activity-card-description">{{ Str::limit($activity->description, 100) }}</p>
                     </div>
+
+                    {{-- Time and Location Meta --}}
+                    <div class="activity-body-meta">
+                        @if($activity->duration)
+                        <div class="activity-meta-item">
+                            <i class="material-icons-round">schedule</i>
+                            <span>{{ $activity->duration }}</span>
+                        </div>
+                        @endif
+
+                        @if($activity->location)
+                        <div class="activity-meta-item">
+                            <i class="material-icons-round">location_on</i>
+                            <span>{{ $activity->location }}</span>
+                        </div>
+                        @endif
+                    </div>
                 </div>
                 <div class="activity-card-footer">
                     <div class="activity-footer-content">
@@ -217,7 +244,7 @@
                                 $iconMap = [
                                     'Briefcase' => 'work',
                                     'Rocket' => 'rocket_launch',
-                                    'DollarSign' => 'attach_money',
+                                    'DollarSign' => 'currency_pound',
                                     'Users' => 'people',
                                     'Target' => 'track_changes',
                                     'PenTool' => 'edit',
@@ -238,6 +265,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </article>
             @empty
             <div class="activities-empty">

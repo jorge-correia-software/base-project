@@ -1101,6 +1101,20 @@ body {
     margin: 0;
 }
 
+/* Activity Card Link Wrapper */
+.activity-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    transition: all 300ms ease;
+}
+
+.activity-card-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Empty State */
 .activities-empty {
     grid-column: 1 / -1; /* span all columns */

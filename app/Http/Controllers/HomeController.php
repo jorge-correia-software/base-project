@@ -8,6 +8,7 @@ use App\Models\Activity;
 use App\Models\Highlight;
 use App\Models\SupportArea;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -78,7 +79,7 @@ class HomeController extends Controller
         $activities = $query->paginate((int)$perPage)->appends($request->except('page'));
 
         $seo = [
-            'title' => 'Activities - BASE Scotland',
+            'title' => 'BASE - Activities',
             'description' => 'Browse all upcoming activities and events designed to support your business journey.',
             'keywords' => 'business activities scotland, business events, workshops, networking',
         ];
@@ -86,12 +87,31 @@ class HomeController extends Controller
         return view('activities', compact('activities', 'seo'));
     }
 
+    public function show(Activity $activity)
+    {
+        // Get related activities (same company, upcoming, exclude current)
+        $relatedActivities = Activity::where('company', $activity->company)
+            ->where('date', '>=', now())
+            ->where('id', '!=', $activity->id)
+            ->orderBy('date')
+            ->limit(3)
+            ->get();
+
+        $seo = [
+            'title' => 'BASE - ' . $activity->name,
+            'description' => Str::limit($activity->description, 155),
+            'keywords' => 'business activities scotland, ' . strtolower($activity->company) . ', ' . strtolower($activity->name),
+        ];
+
+        return view('activity', compact('activity', 'relatedActivities', 'seo'));
+    }
+
     public function support()
     {
         $supportAreas = SupportArea::paginate(12);
 
         $seo = [
-            'title' => 'Support Areas - BASE Scotland',
+            'title' => 'BASE - Support',
             'description' => 'Explore comprehensive business support across key areas to help your company thrive and grow.',
             'keywords' => 'business support scotland, financial guidance, mentorship, legal support, marketing',
         ];
@@ -105,7 +125,7 @@ class HomeController extends Controller
             ->paginate(12);
 
         $seo = [
-            'title' => 'Highlights & Success Stories - BASE Scotland',
+            'title' => 'BASE - Highlights',
             'description' => 'Browse the latest highlights, events, and inspiring success stories from our business community.',
             'keywords' => 'success stories, business highlights, events, testimonials',
         ];
